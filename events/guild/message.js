@@ -3,6 +3,9 @@ module.exports = (Discord, client, message) => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
   
+    if(!message.guild) return;
+
+
     const args = message.content.slice(prefix.length).split(/ +/);
     const cmd = args.shift().toLowerCase();
 
@@ -54,7 +57,7 @@ module.exports = (Discord, client, message) => {
           }
         }
         if (invalidPerms.length){
-          return message.channel.send('You dont have permissions to do that');
+          return message.channel.send(`You dont have permissions to do that ${perm}`);
         }
       }
 
