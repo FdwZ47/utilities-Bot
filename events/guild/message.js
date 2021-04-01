@@ -17,7 +17,7 @@ module.exports = (Discord, client, message) => {
   }
   
   const current_time = Date.now();
-  const time_stamps = cooldowns.get(command.name);
+  const time_stamps = cooldown.get(command.name);
   const cooldown_amount = (command.cooldown) * 1000;
 
 
