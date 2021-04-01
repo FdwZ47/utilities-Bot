@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'suggestions',
     aliases: ['suggest', 'suggestion', 'اقترح'],
-    cooldown: 600,
     permissions: [],
     description: 'creates a suggestion!',
     execute(client, message, args){
