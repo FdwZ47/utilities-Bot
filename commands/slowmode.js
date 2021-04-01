@@ -7,7 +7,7 @@ module.exports = {
 async execute(client, message, args){
     if (!args[0]) return message.channel.send(new Discord.MessageEmbed() .setDescription('What do you want the slowmode to be set to? **type a number after the command**') .setColor('RED'));
     if(isNaN(args[0])) return message.channel.send(new Discord.MessageEmbed() .setDescription('Please type a real number!') .setColor('RED'));
-    if (args[0] > 21600 || args[0] < 1) return message.channel.send(new Discord.MessageEmbed() .setDescription('Number must be just between 1 - 21600') .setColor('RED'))
+    if (args[0] > 21600 || args[0] < 0) return message.channel.send(new Discord.MessageEmbed() .setDescription('Number must be just between 1 - 21600') .setColor('RED'))
 
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]) || message.channel
 
