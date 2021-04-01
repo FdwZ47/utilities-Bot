@@ -1,4 +1,3 @@
-const Discord = require('discord.js');
 module.exports = (Discord, client, message) => {
     const prefix = '>';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -59,7 +58,7 @@ module.exports = (Discord, client, message) => {
       }
       if (invalidPerms.length){
       
-      return message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${memberTarget.user.id}> you cannot run this command because you don't have permissions`) .setColor('RANDOM'));
+      return message.channel.send(`<:blue_point:821782715925921794> <@${memberTarget.user.id}> you cannot run this command because you don't have permissions`);
         
       }
     }
