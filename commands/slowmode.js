@@ -2,13 +2,9 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'slowmode',
     aliases: ['sl', 'مؤقت'],
+    permissions: ["MANAGE_CHANNELS"],
     description: 'Sets SlowMode for a Channel',
 async execute(message, args){
-    if (!message.member.hasPermission("MANAGE_CHANNELS")){
-        messages.channel.send(new Discord.MessageEmbed() .setDescription('You **Cannot** do that because you don t have permissions') .setColor('RED'))
-        return;
-    }
-
     if (!args[0]) return message.channel.send(new Discord.MessageEmbed() .setDescription('What do you want the slowmode to be set to? **type a number after the command**') .setColor('RED'));
     if(isNaN(args[0])) return message.channel.send(new Discord.MessageEmbed() .setDescription('Please type a real number!') .setColor('RED'));
     if (args[0] > 21600 || args[0] < 1) return message.channel.send(new Discord.MessageEmbed() .setDescription('Number must be just between 1 - 21600') .setColor('RED'))
