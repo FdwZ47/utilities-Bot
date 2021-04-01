@@ -12,12 +12,12 @@ module.exports = (Discord, client, message) => {
 
   const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-  if(!cooldowns.has(command.name)){
-    cooldowns.set(command.name, new Discord.Collection());
+  if(!cooldown.has(command.name)){
+    cooldown.set(command.name, new Discord.Collection());
 }
 
 const current_time = Date.now();
-const time_stamps = cooldowns.get(command.name);
+const time_stamps = cooldown.get(command.name);
 const cooldown_amount = (command.cooldown) * 1000;
 
 //If time_stamps has a key with the author's id then check the expiration time to send a message to a user.
