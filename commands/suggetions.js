@@ -3,19 +3,19 @@ module.exports = {
     aliases: ['suggest', 'suggestion', 'اقتراح'],
     permissions: [],
     description: 'creates a suggestion!',
-    execute(message, args, client){
-        const channel = message.guild.channels.cache.find(c => c.name === '「📨」suggest');
-        if(!channel) return message.channel.send('there is no suggestion channel');
+    execute(message, args, client) {
+        const channel = message.guild.channel.cache.find(c => c.name === '「📨」suggest');
+        if (!channel) return message.channel.send('there is no suggestion channel');
 
         let messageArgs = args.join(' ');
         const embed = new discord.MessageEmbed()
-        .setColor('#00CFC9')
-        .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
-        .setDescription(messageArgs);
+            .setColor('#00CFC9')
+            .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
+            .setDescription(messageArgs);
 
-        channel.send(embed).then((msg) =>{
+        channel.send(embed).then((msg) => {
             message.delete();
-        }).catch((err)=>{
+        }).catch((err) => {
             throw err;
         });
     }
