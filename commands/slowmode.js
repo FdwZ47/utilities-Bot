@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'slowmode',
     aliases: ['sl', 'مؤقت'],
-    permissions: ["MANAGE_CHANNELS"],
     description: 'Sets SlowMode for a Channel',
 async execute(message, args){
     if (!message.member.hasPermission("MANAGE_CHANNELS")){
