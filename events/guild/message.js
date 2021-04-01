@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = (Discord, client, message) => {
     const prefix = '>';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -57,11 +58,9 @@ module.exports = (Discord, client, message) => {
         }
       }
       if (invalidPerms.length){
-
-        const embed = new discord.MessageEmbed()
-        .setDescription(`<@${memberTarget.user.id}> you dont have **permissions** to do that`)
-        .setColor('RANDOM')
-        return message.channel.send(embed);
+      
+      return message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${memberTarget.user.id}> you cannot run this command because you don't have permissions`) .setColor('RANDOM'));
+        
       }
     }
 
