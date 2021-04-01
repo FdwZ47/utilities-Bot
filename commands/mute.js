@@ -18,14 +18,14 @@ module.exports = {
                 return
             }
             memberTarget.roles.add(muteRole.id);
-            message.channel.send(`<@${memberTarget.user.id}> has been muted for **${ms(ms(args[1]))}**`);
+            message.channel.send(`<:pickaxe:821829362227347526><@${memberTarget.user.id}> has been muted for **${ms(ms(args[1]))}**`);
 
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);
                 message.channel.send(`**hi <@${memberTarget.user.id}> you are now unmuted**<a:yes_1:823243336664088616>`);
             }, ms(args[1]));
         } else {
-            message.channel.send('<:idk:822217580567592991> I cant find this member!');
+            message.channel.send('<:idk:822217580567592991> I cannot find this member');
         }
     }
 }

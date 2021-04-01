@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = {
     name: 'ban',
     aliases: ['b', 'باند'],
@@ -8,9 +9,9 @@ module.exports = {
         if(member){
             const memberTarget = message.guild.members.cache.get(member.id);
             memberTarget.ban();
-            message.channel.send(`<a:ench_pick:822221894195216385>${memberTarget.user.name} has been **banned** from the server`);
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:ench_pick:822221894195216385><@${memberTarget.user.ID}> has been **banned from the server**`) .setColor('#4B93D5'));
         }else{
-            message.channel.send('<:idk:822217580567592991> I can t  find this member');
+            message.channel.send('<:idk:822217580567592991> I Cannot find this member please make sure to mention user after the command');
         }
     }
 }

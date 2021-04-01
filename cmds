@@ -50,3 +50,14 @@ client.commands.set(command.name, com
         "DAMINISTRATOR",
         "ADMINISTRATOR",ADMINISTRATOR
         
+
+        message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:ench_pick:822221894195216385><@${memberTarget.user.ID}> has been **banned** from the server`) .setColor('#DDFAFF'));
+
+===========================================================================================================
+
+
+        message.channel.send(`<a:ench_pick:822221894195216385><@${memberTarget.user.ID}> has been **banned** from the server`);
+
+
+
+        ==================================================
