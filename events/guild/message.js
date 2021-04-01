@@ -27,7 +27,7 @@ module.exports = (Discord, client, message) => {
       if(current_time < expiration_time){
           const time_left = (expiration_time - current_time) / 1000;
 
-          return message.reply(`Please wait for **${time_left.toFixed(1)}** seconds before using this command`);
+          return message.reply(`Please wait ${time_left.toFixed(1)} more seconds before using ${command.name}`);
       }
   }
 
