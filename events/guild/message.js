@@ -11,9 +11,6 @@ module.exports = (Discord, client, message) => {
 
   const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-  if(!cooldown.has(command.name)){
-    cooldown.set(command.name, new Discord.Collection());
-}
 
   const validPermissions = [
     "CREATE_INSTANT_INVITE",
