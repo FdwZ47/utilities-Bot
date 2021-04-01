@@ -57,9 +57,7 @@ module.exports = (Discord, client, message) => {
         }
       }
       if (invalidPerms.length){
-      
-      return message.channel.send(`<:blue_point:821782715925921794> <@${memberTarget.user.id}> you cannot run this command because you don't have permissions`);
-        
+        return message.channel.send('you cannot run this command because you dont have permissions');
       }
     }
 
