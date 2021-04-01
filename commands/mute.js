@@ -3,7 +3,7 @@ const ms = require('ms');
 module.exports = {
     name: 'mute',
     aliases: ['m', 'اسكت', 'اص'],
-    cooldown: 10,
+    cooldown: 5,
     permissions: ["MUTE_MEMBERS"],
     description: "this mutes a member!",
     execute(client, message, args) {
