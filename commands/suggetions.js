@@ -6,7 +6,7 @@ module.exports = {
     description: 'creates a suggestion!',
     execute( client, message, args){
         const channel = message.guild.channels.cache.find(c => c.name === 'suggestions');
-        if(!channel) return message.channel.send('there is no suggestions channel');
+        if(!channel) return message.channel.send('suggestions channel does not exist!');
 
         let messageArgs = args.join(' ');
         const embed = new Discord.MessageEmbed()
