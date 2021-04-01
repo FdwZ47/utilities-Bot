@@ -15,7 +15,9 @@ module.exports = {
         .setDescription(messageArgs);
 
         channel.send(embed).then((msg) =>{
-            msg.delete();
+            msg.react('')
+            msg.react('')
+            message.delete();
         }).catch((err)=>{
             throw err;
         });
