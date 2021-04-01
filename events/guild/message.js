@@ -57,7 +57,11 @@ module.exports = (Discord, client, message) => {
         }
       }
       if (invalidPerms.length){
-        return message.channel.send(`Missing Permissions: \`${invalidPerms}\``);
+
+        const embed = new discord.MessageEmbed()
+        .setDescription(`<@${memberTarget.user.id}> you dont have **permissions** to do that`)
+        .setColor('RANDOM')
+        return message.channel.send(embed);
       }
     }
 
