@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = {
     name: 'suggestions',
     aliases: ['suggest', 'suggestion'],
@@ -8,7 +9,7 @@ module.exports = {
         if(!channel) return message.channel.send('there is no suggestions channel');
 
         let messageArgs = args.join(' ');
-        const embed = new discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         .setColor('#00CFC9')
         .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
         .setDescription(messageArgs);
