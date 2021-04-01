@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = {
     name: 'unmute',
     aliases: ['un', 'تكلم'],
@@ -12,9 +13,9 @@ module.exports = {
             let memberTarget= message.guild.members.cache.get(target.id);
             
             memberTarget.roles.remove(muteRole.id);
-            message.channel.send(`<@${memberTarget.user.id}> has been unmuted`);
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${memberTarget.user.id}> **has been unmuted**`) .setColor('#93BFE6'));
         } else{
-            message.channel.send('<:idk:822217580567592991> I cant find that member!');
+            message.channel.send('<:idk:822217580567592991> I cannot find that member!');
         }
     }
 }
