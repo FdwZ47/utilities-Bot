@@ -7,11 +7,13 @@ module.exports = {
     async execute(client, message, args) {
         let msg = await message.channel.send("just one second..")
 
+        msg.edit(`<#${channel.id}> has been locked`)
+
         try {
             message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == "@everyone"), {
                 SEND_MESSAGES: false,
             })
-            msg.edit(`<#${channel.id}> has been locked`)
+    
         }catch(e) {
             console.log(e)
         }
