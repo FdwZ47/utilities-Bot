@@ -2,12 +2,12 @@ module.exports = (Discord, client, message) => {
   const prefix = '>';
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-
-  if (!message.guild) return;
-
-  let blacklisted = db.get(`blacklist_${message.author.id}`) //here the bot is searching if the person typing  is blacklisted
+  let blacklisted = DB.get(`blacklist_${message.author.id}`) //here the bot is searching if the person typing  is blacklisted
 
   if(blacklisted === 1) return message.channel.send("Bro, it looks like you are blacklisted from the bot..."); //if it is blacklisted then you can return; 
+
+
+  if (!message.guild) return;
 
 
   const args = message.content.slice(prefix.length).split(/ +/);
