@@ -12,7 +12,7 @@ module.exports = {
             if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
 
             const otherIconEmbed = new Discord.MessageEmbed()
-            .setTitle(`**${user.username}'s avatar**`)
+            .setTitle(`${user.username}'s avatar`)
             .setcolor('#8FA0EA')
             .setImage(user.displayAvatarURL);
 
@@ -20,7 +20,7 @@ module.exports = {
         }
 
         const myIconEmbed = new Discord.MessageEmbed()
-        .setTitle(`**${message.author.username}'s avatar**`)
+        .setTitle(`${message.author.username}'s avatar`)
         .setcolor('#8FA0EA')
         .setImage(message.author.displayAvatarURL);
 
