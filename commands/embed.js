@@ -13,7 +13,7 @@ module.exports = {
         const error = new Discord.MessageEmbed() 
         .setColor('#93BFE6')
         .setTitle('**<:gears:819943211530977350> Invalid args**')
-        .setDescription('`<:info:821779298952151050> please make sure to type title(one word), color(hex code or basic colors in caps), description(embed body))`')
+        .setDescription('<:info:821779298952151050> please make sure to type title(one word), color(hex code or basic colors in caps), description(embed body))')
 
         if(!title) return message.channel.send(error) // ! means no, so if there's no title, return and send the error embed
         if(!color) return message.channel.send(error)
