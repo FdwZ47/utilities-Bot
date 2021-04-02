@@ -96,3 +96,19 @@ module.exports = {
         message.channel.send(avatar_list);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+=======================
+
+
+
+.setFooter(`Embed created by ${message.author.username}`)
