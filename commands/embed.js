@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: "embed",
-    aliases: ['em', 'make'],
+    aliases: ['em', 'make', 'add'],
     permissions: ["ADMINISTRATOR"],
     description: "make embed",
 
