@@ -5,7 +5,7 @@ module.exports = {
     name: 'whitelist',
     description: 'Whitelist a user',
     aliases: ['unblock'],
-    execute: async (client, message, args) => {//everyone haves different execute parameters
+    execute:(client, message, args) => {//everyone haves different execute parameters
         if(message.author.id != 755767643331362916) return message.channel.send("only my develober can put the person **blacklisted or whitelisted**") //add your id without quotes
     
         let user;
