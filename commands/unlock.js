@@ -5,7 +5,7 @@ module.exports = {
     permissions: ["MANAGE_CHANNELS"],
     description: "this command locked channel!",
     async execute(client, message, args) {
-        let msg = await message.channel.send("<:gears:819943211530977350> just a second")
+        let msg = await message.channel.send(`<:gears:819943211530977350> just a second`)
 
         try {
             message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == "@everyone"), {
