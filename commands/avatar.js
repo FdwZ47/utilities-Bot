@@ -6,12 +6,12 @@ module.exports = {
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your avatar(profile icon)",
     execute(client, message, args){
-        message.channel.id !=='827127242005020702'
+        //message.channel.id !=='827127242005020702'
         if (args[0]) {
             const user = message.mentions.users.first();
             if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
 
-            const otherIconEmbed = new Discord.MessageEmbed()
+            const otherIconEmbed = new Discord.RIchEmbed()
             .setTitle(`${user.username}'s avatar`)
             .setColor('#8FA0EA')
             .setImage(user.displayAvatarURL);
@@ -19,7 +19,7 @@ module.exports = {
             return message.channel.send(otherIconEmbed).catch(err => console.log(err));
         }
 
-        const myIconEmbed = new Discord.MessageEmbed()
+        const myIconEmbed = new Discord.RichEmbed()
         .setTitle(`${message.author.username}'s avatar`)
         .setColor('#8FA0EA')
         .setImage(message.author.displayAvatarURL);
