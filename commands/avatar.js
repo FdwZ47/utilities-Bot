@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'avatar',
     aliases: ['pfp', 'صور', 'v'],
+    permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your avatar(profile icon)",
     execute(client, message, args){
         message.channel.id !=='827127242005020702'
