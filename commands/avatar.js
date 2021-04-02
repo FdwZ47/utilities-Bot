@@ -13,16 +13,16 @@ module.exports = {
 
             const otherIconEmbed = new Discord.MessageEmbed()
             .setTitle(`${user.username}'s avatar`)
-            .setcolor('#8FA0EA')
-            .setImage(user.displayAvatarURL);
+            .setImage(user.displayAvatarURL)
+            .setcolor('#8FA0EA');
 
             return message.channel.send(otherIconEmbed).catch(err => console.log(err));
         }
 
         const myIconEmbed = new Discord.MessageEmbed()
         .setTitle(`${message.author.username}'s avatar`)
-        .setcolor('#8FA0EA')
-        .setImage(message.author.displayAvatarURL);
+        .setImage(message.author.displayAvatarURL)
+        .setcolor('#8FA0EA');
 
         return message.channel.send(myIconEmbed).catch(err => console.log(err));
     }
