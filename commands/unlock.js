@@ -8,8 +8,8 @@ module.exports = {
     async execute(client, message, args){
         const role = message.guild.roles.get('768675517955309599')
 
-        Channel.ubdaterole(role, {
-            SEND_MESSAGES: false
+        Channel.updateOverwrite(role, {
+            SEND_MESSAGES: true
         });
         message.channel.send(`<#${channel.id}> has been locked`);
     }
