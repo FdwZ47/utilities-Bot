@@ -13,7 +13,7 @@ module.exports = {
 
             const otherIconEmbed = new Discord.MessageEmbed()
             .setTitle(`**${user.username}'s avatar**`)
-            .setcolor(RANDOM)
+            .setcolor('#8FA0EA')
             .setImage(user.displayAvatarURL);
 
             return message.channel.send(otherIconEmbed).catch(err => console.log(err));
@@ -21,7 +21,7 @@ module.exports = {
 
         const myIconEmbed = new Discord.MessageEmbed()
         .setTitle(`**${message.author.username}'s avatar**`)
-        .setcolor(RANDOM)
+        .setcolor('#8FA0EA')
         .setImage(message.author.displayAvatarURL);
 
         return message.channel.send(myIconEmbed).catch(err => console.log(err));
