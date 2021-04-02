@@ -1,16 +1,19 @@
-const { Channel } = require("discord.js")
-
+const Discord = require('discord.js');
 module.exports = {
-    name: 'lock',
-    aliases: ['lo', 'قفل'],
+    name: 'unlock',
+    aliases: ['open', 'فتح'],
     permissions: ["MANAGE_CHANNELS"],
-    description: "this command loked channels",
-    async execute(client, message, args){
-        const role = message.guild.roles.get('768675517955309599')
+    description: "this command locked channels!",
+    async execute(client, message, args) {
+        let msg = await message.channel.send("just one second..")
 
-        Channel.updateOverwrite(role, {
-            SEND_MESSAGES: true
-        });
-        message.channel.send(`<#${channel.id}> has been locked`);
+        try {
+            message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == "@everyone"), {
+                SEND_MESSAGES: true,
+            })
+            msg.edit(`<#${channel.id}> has been unlocked`)
+        }catch(e) {
+            console.log(e)
+        }
     }
 }
