@@ -5,8 +5,9 @@ module.exports = {
     name: 'blacklist',
     description: 'Blacklists a user from using the bot',
     aliases: ['block'],
-    execute: async (client, message, args) => { //change all this previous lines to your normal parameters
-        if(message.author.id != 755767643331362916) return message.channel.send("only my develober can put the person **blacklisted or whitelisted**") //add your id without quotes
+    usage: 'blacklist <@user>',
+    execute: async (client, message, args, text, prefix) => { //change all this previous lines to your normal parameters
+        if(message.author.id != 755767643331362916) return message.channel.send("This can only be ran by the bot owner!") //add your id without quotes
     
         let user;
         if (message.mentions.users.first()) {
