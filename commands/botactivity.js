@@ -1,6 +1,7 @@
 module.exports = {
     name: 'bot activity',
     aliases: ['botact'],
+    permissions: [],
     description: "this command change the bot activity",
     execute(client, message, args){
         if(message.author.id != 755767643331362916) return message.channel.send("<:gears:819943211530977350> **only my developer** can run this command");
