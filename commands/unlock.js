@@ -5,13 +5,13 @@ module.exports = {
     permissions: ["MANAGE_CHANNELS"],
     description: "this command locked channel!",
     async execute(client, message, args) {
-        let msg = await message.channel.send(`<#${channel.id}> has been unlocked`)
+        let msg = await message.channel.send("channel has been unlocked")
 
         try {
             message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == "@everyone"), {
                 SEND_MESSAGES: true,
             })
-            msg.edit(`<#${channel.id}> has been unlocked`)
+            msg.edit("channel unlocked")
         }catch(e) {
             console.log(e)
         }
