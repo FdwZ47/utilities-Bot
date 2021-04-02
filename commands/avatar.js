@@ -11,7 +11,7 @@ module.exports = {
             const user = message.mentions.users.first();
             if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
 
-            const otherIconEmbed = new Discord.RichEmbed()
+            const otherIconEmbed = new Discord.MessageEmbed()
             .sertTitle(`**${user.username}'s avatar**`)
             .setcolor(RANDOM)
             .setImage(user.displayAvatarURL);
@@ -19,7 +19,7 @@ module.exports = {
             return message.channel.send(otherIconEmbed).catch(err => console.log(err));
         }
 
-        const myIconEmbed = new Discord.RichEmbed()
+        const myIconEmbed = new Discord.MessageEmbed()
         .sertTitle(`**${message.author.username}'s avatar**`)
         .setcolor(RANDOM)
         .setImage(message.author.displayAvatarURL);
