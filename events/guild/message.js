@@ -2,11 +2,6 @@ module.exports = (Discord, client, message) => {
   const prefix = '>';
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  let blacklisted = DB.get(`blacklist_${message.author.id}`) //here the bot is searching if the person typing  is blacklisted
-
-  if(blacklisted === 1) return message.channel.send("Bro, it looks like you are blacklisted from the bot..."); //if it is blacklisted then you can return; 
-
-
   if (!message.guild) return;
 
 
@@ -64,6 +59,12 @@ module.exports = (Discord, client, message) => {
       return message.channel.send('you cannot run this command because you dont have permissions');
     }
   }
+
+  
+  let blacklisted = db.get(`blacklist_${message.author.id}`) //here the bot is searching if the person typing  is blacklisted
+
+  if(blacklisted === 1) return message.channel.send("Bro, it looks like you are blacklisted from the bot..."); //if it is blacklisted then you can return; 
+
 
   if (command) command.execute(client, message, args, Discord);
 
