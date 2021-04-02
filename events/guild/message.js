@@ -5,6 +5,10 @@ module.exports = (Discord, client, message) => {
 
   if (!message.guild) return;
 
+  let blacklisted = db.get(`blacklist_${message.author.id}`) //here the bot is searching if the person typing  is blacklisted
+
+  if(blacklisted === 1) return message.channel.send("Bro, it looks like you are blacklisted from the bot..."); //if it is blacklisted then you can return; 
+
 
   const args = message.content.slice(prefix.length).split(/ +/);
   const cmd = args.shift().toLowerCase();

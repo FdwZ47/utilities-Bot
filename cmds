@@ -97,7 +97,6 @@ module.exports = {
     }
 }
 
-
 npm i quick.db
 npm -g --add-python-to-path install windows-build-tools node-gyp
 
