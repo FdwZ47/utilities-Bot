@@ -64,7 +64,3 @@ module.exports = (Discord, client, message) => {
   if (command) command.execute(client, message, args, Discord);
 
 }
-
-let blacklisted = db.get(`blacklist_${message.author.id}`) //here the bot is searching if the person typing  is blacklisted
-
-if(blacklisted === 1) return message.channel.send("Bro, it looks like you are blacklisted from the bot..."); //if it is blacklisted then you can return; 
