@@ -13,14 +13,14 @@ module.exports = {
 
             const otherIconEmbed = new Discord.MessageEmbed()
             .setTitle(`${user.username}'s avatar`)
-            .setImage(user.displayAvatarURL);
+            .setDescription(user.displayAvatarURL);
 
             return message.channel.send(otherIconEmbed).catch(err => console.log(err));
         }
 
         const myIconEmbed = new Discord.MessageEmbed()
         .setTitle(`${message.author.username}'s avatar`)
-        .setImage(message.author.displayAvatarURL);
+        .setDescription(message.author.displayAvatarURL);
 
         return message.channel.send(myIconEmbed).catch(err => console.log(err));
     }
