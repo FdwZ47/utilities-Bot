@@ -11,17 +11,11 @@ module.exports = {
             const user = message.mentions.users.first();
             if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
 
-            const otherIconEmbed = new Discord.MessageEmbed()
-                .setTitle(`${user.username}'s avatar`)
-                .setImage(user.displayAvatarURL);
 
-            return message.channel.send(otherIconEmbed);
+            return message.channel.send(new Discord.MessageEmbed() .setTitle(`${user.username}'s avatar`) .setImage(user.displayAvatarURL));
         }
+       
 
-        const myIconEmbed = new Discord.MessageEmbed()
-            .setTitle(`${message.author.username}'s avatar`)
-            .setImage(message.author.displayAvatarURL);
-
-        return message.channel.send(myIconEmbed);
+        return message.channel.send(new Discord.MessageEmbed() .setTitle(`${message.author.username}'s avatar`) .setImage(message.author.displayAvatarURL));
     }
 }
