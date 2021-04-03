@@ -2,7 +2,7 @@ module.exports = (Discord, client, message) => {
   const prefix = '>';
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  if (!message.guild) return;
+  if(message.channel.type === 'dm') return;
 
 
   const args = message.content.slice(prefix.length).split(/ +/);
