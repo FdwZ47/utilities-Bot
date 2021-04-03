@@ -6,7 +6,7 @@ module.exports = {
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your avatar(profile icon)",
     execute(client, message, args) {
-        if (message.channel.id !== '827127242005020702', '798664931359719485', '788200512084115488') return;
+        if (message.channel.id !== '788200512084115488') return;
         if (args[0]) {
             const user = message.mentions.users.first();
             if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
