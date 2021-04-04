@@ -31,7 +31,7 @@ module.exports = {
         .addField("Member ID", member.id)
         //.addField('Roles', `<@&${member._roles.join('> <@&')}>`)
         .addField("<:blue_point:821782715925921794> Account Created On:", ` ${moment.utc(member.user.createdAt).format("MMMM Do YYYY")}`, true)
-        .addField('<:blue_point:821782715925921794> Joined the server At:', `${joineddate} \n> Befor **${joined}** day's Ago`) 
+        .addField('<:blue_point:821782715925921794> Joined the server At:', `${joineddate} \n> Before **${joined}** day's Ago`) 
         .setFooter('Developer Tanya#0762', 'https://cdn.discordapp.com/attachments/827127242005020702/827859841556021268/fe0a875a5bf15e0bdb47e8691504778c.jpg')
 
         message.channel.send(userEmbed);
