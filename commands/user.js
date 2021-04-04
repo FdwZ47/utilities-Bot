@@ -8,6 +8,7 @@ module.exports = {
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your user info",
     execute(client, message, args) {
+        if (message.channel.id !== '798664931359719485') return;
         let userArray = message.content.split(" ");
         let userArgs = userArray.slice(1);
         let member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;
@@ -29,8 +30,8 @@ module.exports = {
         .setColor('#0097FF')
         .addField("Member ID", member.id)
         //.addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-        .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("MMMM Do YYYY")}`, true)
-        .addField('Joined the server At:', `${joineddate} \n> Befor **${joined}** day's Ago`) 
+        .addField("<:blue_point:821782715925921794> Account Created On:", ` ${moment.utc(member.user.createdAt).format("MMMM Do YYYY")}`, true)
+        .addField('<:blue_point:821782715925921794> Joined the server At:', `${joineddate} \n> Befor **${joined}** day's Ago`) 
         .setFooter('Developer Tanya#0762', 'https://cdn.discordapp.com/attachments/827127242005020702/827859841556021268/fe0a875a5bf15e0bdb47e8691504778c.jpg')
 
         message.channel.send(userEmbed);
