@@ -11,7 +11,7 @@ module.exports = {
             message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == "@everyone"), {
                 SEND_MESSAGES: true,
             })
-            msg.edit("<a:yes_1:823243336664088616> channel has been Successfully **unlocked**")
+            msg.edit("<a:yes_1:823243336664088616> channel has been **unlocked**")
         }catch(e) {
             console.log(e)
         }
