@@ -21,18 +21,17 @@ module.exports = {
         let y = Date.now() - message.guild.members.cache.get(member.id).joinedAt;
         const joined = Math.floor(y / 86400000);
 
-        const joineddate = moment.utc(member.joinedAt).format("dddd, MMMM Do YYYY, HH:mm:ss");
+        const joineddate = moment.utc(member.joinedAt).format("MMMM Do YYYY");
         let status = member.presence.status;
 
         const userEmbed = new Discord.MessageEmbed()
         .setAuthor(member.user.tag, member.user.displayAvatarURL())
-        .setTimestamp()
-        .setColor('BLUE')
+        .setColor('#0097FF')
         .addField("Member ID", member.id)
         .addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-        .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("dddd, MMMM Do YYYY")}`, true)
-        .addField('Joined the server At', `${joineddate} \n> ${joined} day(S) Ago`) 
-        .addField("Status", status)
+        .addField("Account Created On:", ` ${moment.utc(member.user.createdAt).format("MMMM Do YYYY")}`, true)
+        .addField('Joined the server At', `${joineddate} \n> Befor ${joined} day's Ago`) 
+        .setFooter('Developer Tanya#0762', 'https://cdn.discordapp.com/attachments/827127242005020702/827859841556021268/fe0a875a5bf15e0bdb47e8691504778c.jpg')
 
         message.channel.send(userEmbed);
     }
