@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['nick', 'set'],
     permissions: ["MANAGE_NICKNAMES"],
     description: "this command change others nickname",
-    execute(client, message, args) {
+    async execute(client, message, args) {
         let user = message.mentions.users.first();
         if(!user) return message.channel.send("make sure to mention a user after the command")
 
