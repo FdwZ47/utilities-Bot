@@ -9,12 +9,6 @@ module.exports = {
         let user = message.mentions.users.first();
         if(!user) return message.channel.send("make sure to mention a user after the command")
 
-        if (
-            message.member.roles.highest.position <=
-            member.roles.highest.position
-        )
-        return message.channel.send(new Discord.MessageEmbed() .setTitle(`<:NO:828567406347419669> Unable to change nick`) .setDescription(`<@${memberTarget.user.id}> has a higher or equal role than me which means **i can't do anything to him**`) .setColor('RED'));
-
         let nick = args.slice(1).join(" ")
         if(!nick) return message.channel.send("please input a nickname")
 
@@ -26,6 +20,11 @@ module.exports = {
 
         message.channel.send(embed)
 
+        if (
+            message.member.roles.highest.position <=
+            member.roles.highest.position
+        )
+        return message.channel.send(new Discord.MessageEmbed() .setTitle(`<:NO:828567406347419669> Unable to change nick`) .setDescription(`<@${memberTarget.user.id}> has a higher or equal role than me which means **i can't do anything to him**`) .setColor('RED'));
 
     }
 }

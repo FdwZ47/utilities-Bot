@@ -11,12 +11,6 @@ module.exports = {
             let mainRole = message.guild.roles.cache.find(role => role.name === 'tester');
             let muteRole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
         
-            if (
-                message.member.roles.highest.position <=
-                member.roles.highest.position
-            )
-            return message.channel.send(new Discord.MessageEmbed() .setTitle(`<:NO:828567406347419669> Unable to mute ${user.username}!`) .setDescription(`<@${memberTarget.user.id}> has a higher or equal role than me which means **i can't do anything to him**`) .setColor('RED'));
-
 
             let memberTarget = message.guild.members.cache.get(target.id);
 
@@ -35,5 +29,11 @@ module.exports = {
         } else {
             message.channel.send('<:idk:822217580567592991> I cannot find this member');
         }
+        if (
+            message.member.roles.highest.position <=
+            member.roles.highest.position
+        )
+        return message.channel.send(new Discord.MessageEmbed() .setTitle(`<:NO:828567406347419669> Unable to mute ${user.username}!`) .setDescription(`<@${memberTarget.user.id}> has a higher or equal role than me which means **i can't do anything to him**`) .setColor('RED'));
+        
     }
 }
