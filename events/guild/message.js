@@ -2,8 +2,8 @@ module.exports = (Discord, client, message) => {
   const prefix = '>';
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  if(message.channel.type === 'dm') return;
-  if(!message.guild) return;
+  if (message.channel.type === 'dm') return;
+  if (!message.guild) return;
 
 
   const args = message.content.slice(prefix.length).split(/ +/);
@@ -57,14 +57,14 @@ module.exports = (Discord, client, message) => {
       }
     }
     if (invalidPerms.length) {
-      return message.channel.send(new Discord.MessageEmbed() .setDescription('<a:srry:825769123686252545> you cannot use this command because you do Not have **permissions**') .setColor('RANDOM'));
+      return message.channel.send(new Discord.MessageEmbed().setDescription('<a:srry:825769123686252545> you cannot use this command because you do Not have **permissions**').setColor('RANDOM'));
     }
   }
-  if {
+  if (
     message.member.roles.highest.position <=
     member.roles.highest.position
-}
-return message.channel.send(new Discord.MessageEmbed() .setTitle(`<:NO:828567406347419669> Unable to punish ${user.username}!`) .setDescription(`<@${memberTarget.user.id}> has a higher or equal role than me which means **i can't do anything to him**`) .setColor('RED'));
+  )
+    return message.channel.send(new Discord.MessageEmbed().setTitle(`<:NO:828567406347419669> Unable to punish ${user.username}!`).setDescription(`<@${memberTarget.user.id}> has a higher or equal role than me which means **i can't do anything to him**`).setColor('RED'));
 
 
 
