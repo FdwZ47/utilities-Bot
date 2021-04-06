@@ -11,6 +11,6 @@ module.exports = {
 
         if(!message.member.voice.channel) return message.channel.send(new Discord.MessageEmbed() .setDescription('you need to be in a voice channel to move this member') .setColor('RED'));
         member.voice.setChannel(message.member.voice.channel);
-        message.channel.send(new Discord.MessageEmbed() .setTitle('<:success:821777867335008297> Done') .setDescription(`<@${memberTarget.user.id}> has been moved to your voice channel`) .setColor('#DDFAFF'));
+        message.channel.send(new Discord.MessageEmbed() .setTitle('<:success:821777867335008297> Done') .setDescription(`${user.username} has been moved to your voice channel`) .setColor('#DDFAFF'));
     }
 }
