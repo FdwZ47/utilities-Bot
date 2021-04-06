@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['b', 'باند'],
     permissions: ["BAN_MEMBERS"],
     description: "this command bans a member!",
-    execute(client, message, args){
+    execute(client, message, args, Discord){
         const member = message.mentions.users.first();
 
         if(member){

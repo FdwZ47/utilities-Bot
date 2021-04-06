@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['cl', 'مسح'],
     permissions: ["MANAGE_MESSAGES"],
     description: "clear messages!",
-    async execute(client, message, args) {
+    async execute(client, message, args, Discord) {
         if(!args[0]) return message.reply("please enter the amount of messages thet you want to clear");
         if(isNaN(args[0])) return message.reply("please enter a real number!")
 

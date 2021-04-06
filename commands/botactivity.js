@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['botact'],
     permissions: [],
     description: "this command change the bot activity",
-    execute(client, message, args){
+    execute(client, message, args, Discord){
         if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setTitle('For developer') .setDescription(`<:gears:819943211530977350> <@${user.id}> **only my developer** can run this command`) .setC);
         //here you tell the bot to choose the kind of activity
 if (args[0] === "playing"){

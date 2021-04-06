@@ -7,7 +7,7 @@ module.exports = {
     aliases: ['u', 'info'],
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your user info",
-    execute(client, message, args) {
+    execute(client, message, args, Discord) {
         if (message.channel.id !== '798664931359719485') return;
         let userArray = message.content.split(" ");
         let userArgs = userArray.slice(1);

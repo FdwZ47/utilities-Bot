@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['k', 'طرد'],
     permissions: ["KICK_MEMBERS"],
     description: "this command kicks a member!",
-    execute(client, message, args){
+    execute(client, message, args, Discord){
         const member = message.mentions.users.first();
         if(member){
             const memberTarger = message.guild.members.cache.get(member.id);

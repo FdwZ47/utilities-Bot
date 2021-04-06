@@ -6,7 +6,7 @@ module.exports = {
     permissions: ["ADMINISTRATOR"],
     description: "make embed",
 
-    async execute(client, message,  args){
+    async execute(client, message,  args, Discord){
         let title = args[0] // args[0] is the first word or number after the command name
         let color = args[1] 
         let description = args.slice(2).join(" ") // args.slice(2).join(" ") means we're taking all the arguments including and after the second argument. An argument is just a word or number.

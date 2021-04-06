@@ -4,7 +4,7 @@ module.exports = {
     aliases: ['close', 'قفل'],
     permissions: ["MANAGE_CHANNELS"],
     description: "this command locked channels!",
-    async execute(client, message, args) {
+    async execute(client, message, args, Discord) {
 
         let msg = await message.channel.send("<:gears:819943211530977350> just a second")
 
