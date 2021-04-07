@@ -1,4 +1,3 @@
-const pagination = require('discord.js-pagination');
 const Discord = require('discord.js');
 
 module.exports = {
@@ -11,9 +10,7 @@ module.exports = {
         const info = new Discord.MessageEmbed()
         .setTitle('information')
         .addField('**prefix**', 'Bot prefix = `>`')
-        .addField('**pages in this message**', '1-moderation cmds 2-misc 3-explain')
-        .addField('**note**', 'use The arrows to look through The pages')
-        .addfooter('Bot developer Tanya#0672')
+        .addField('**pages**', '1-moderation 2-misc 3-explain')
 
         const moderation = new Discord.MessageEmbed()
         .setTitle('moderation cmds')
@@ -55,19 +52,9 @@ module.exports = {
         .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u | permissions: `none`')
 
 
-        //message.author.send(info);
-
-        const pages = [
-            info,
-            moderation,
-            misc,
-            explain,
-        ]
-
-        const emojilist = ["<:this:821783058738184202>", "<:that:821783004279734282>"]
-
-        const timeout = '600'
-
-        pagination(message, pages, emojilist, timeout)
+        message.author.send(info);
+        message.author.send(moderation);
+        message.author.send(misc);
+        message.author.send(explain);
     }
 }
