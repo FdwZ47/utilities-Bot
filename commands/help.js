@@ -55,7 +55,7 @@ module.exports = {
         .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo ', 'aliases: u', 'permissions: `none`')
 
 
-        message.author.send(info);
+        //message.author.send(info);
 
         const pages = [
             info,
