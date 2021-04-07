@@ -13,7 +13,7 @@ module.exports = {
         .addField('**prefix**', 'Bot prefix = `>`')
         .addField('**pages in this message**', '1-moderation cmds 2-misc 3-explain')
         .addField('**note**', 'use The arrows to look through The pages')
-        .addfoter('Bot developer Tanya#0672')
+        .addfooter('Bot developer Tanya#0672')
 
         const moderation = new Discord.MessageEmbed()
         .setTitle('moderation cmds')
