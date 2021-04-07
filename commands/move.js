@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
     name: 'move',
-    aliases: ['v', "سحب"],
+    aliases: ['ve', "سحب"],
     permissions: ["MOVE_MEMBERS"],
     description: "this command move the members!",
     execute(client, message, args, Discord) {

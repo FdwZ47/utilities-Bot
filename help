@@ -1,4 +1,4 @@
-const pagination = require('discord.js-pagination');
+//const pagination = require('discord.js-pagination');
 const Discord = require('discord.js');
 
 module.exports = {
@@ -54,9 +54,6 @@ module.exports = {
         .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention`', 'aliases: v | pfp | صور', 'permissions: `none`')
         .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo ', 'aliases: u', 'permissions: `none`')
 
-
-        message.author.send(info);
-
         const pages = [
             info,
             moderation,
@@ -64,10 +61,6 @@ module.exports = {
             explain,
         ]
 
-        const emojilist = ["<:this:821783058738184202>", "<:that:821783004279734282>"]
-
-        const timeout = '600'
-
-        pagination(message, pages, emojilist, timeout)
+        const emojilist = ["""<:that:821783004279734282> "]
     }
 }
