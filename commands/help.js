@@ -10,7 +10,9 @@ module.exports = {
         const info = new Discord.MessageEmbed()
         .setTitle('information')
         .addField('**prefix**', 'Bot prefix = `>`')
-        .addField('**pages**', '1-moderation 2-misc 3-explain')
+        .addField('**pages in this message**', '1-moderation cmds 2-misc 3-explain')
+        .addField('**note**', 'use The arrows to look through The pages')
+        .addfoter('Bot developer Tanya#0672')
 
         const moderation = new Discord.MessageEmbed()
         .setTitle('moderation cmds')
@@ -35,23 +37,23 @@ module.exports = {
 
         const explain = new Discord.MessageEmbed()
         .setTitle('commands info')
-        .setDescription('here is all the commands aliases & useage & permissios')
-        .addField('**ban**', 'How to use: `>ban @mention` | aliases: b | باند | permissions: `BAN_MEMBERS`')
-        .addField('**kick**', 'How to use `>kick @mention` | aliases: k | permissions: `KICK_MEMBERS`')
-        .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m | اص | permissions: `MOVE_MEMBERS`')
-        .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
-        .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
-        .addField('**setnick**', 'How to use: `>setnick @mention new nickname` | aliases: set | nick | permissions: `MANAGE_NICKNAMES`')
-        .addField('**move**', 'How to use: `>move @mention` | aliases: ve | سحب | permissions: `MOVE_MEMBERS`')
-        .addField('**lock**', 'How to use: `>lock` | aliases: close | قفل | permissions: `MANAGE_CHANNELS`')
-        .addField('**unlock**', 'How to use: `>unlock` | aliases: open | فتح | permissions: `MANAGE_CHANNELS`')
-        .addField('**hide**', 'How to use: `>hide`', 'aliases: hi | permissions: `MANAGE_CHANNELS`')
-        .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `MANAGE_CHANNELS`')
-        .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl | مسح | permissions: `MANAGE_MESSAGES`')
-        .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور | permissions: `none`')
-        .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u | permissions: `none`')
+        .description('here is all the commands aliases & useage & permissios')
+        .addField('**ban**', 'How to use: `>ban @mention`', 'aliases: b | باند', 'permissions: `BAN_MEMBERS`')
+        .addField('**kick**', 'How to use `>kick @mention`', 'aliases: k', 'permissions: `KICK_MEMBERS`')
+        .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want', 'aliases: m | اص', 'permissions: `MOVE_MEMBERS`')
+        .addField('**unmute**', 'How to use: `>unmute @mention`', 'aliases: un | تكلم', 'permissions: `MOVE_MEMBERS`')
+        .addField('**unmute**', 'How to use: `>unmute @mention`', 'aliases: un | تكلم', 'permissions: `MOVE_MEMBERS`')
+        .addField('**setnick**', 'How to use: `>setnick @mention new nickname`', 'aliases: set | nick', 'permissions: `MANAGE_NICKNAMES`')
+        .addField('**move**', 'How to use: `>move @mention`', 'aliases: ve | سحب', 'permissions: `MOVE_MEMBERS`')
+        .addField('**lock**', 'How to use: `>lock`', 'aliases: close | قفل', 'permissions: `MANAGE_CHANNELS`')
+        .addField('**unlock**', 'How to use: `>unlock`', 'aliases: open | فتح', 'permissions: `MANAGE_CHANNELS`')
+        .addField('**hide**', 'How to use: `>hide`', 'aliases: hi', 'permissions: `MANAGE_CHANNELS`')
+        .addField('**show**', 'How to use: `>show`', 'aliases: sh', 'permissions: `MANAGE_CHANNELS`')
+        .addField('**clear**', 'How to use: `>clear (number)`', 'aliases: cl | مسح', 'permissions: `MANAGE_MESSAGES`')
+        .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention`', 'aliases: v | pfp | صور', 'permissions: `none`')
+        .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo ', 'aliases: u', 'permissions: `none`')
 
-
+        
         message.author.send(info);
         message.author.send(moderation);
         message.author.send(misc);
