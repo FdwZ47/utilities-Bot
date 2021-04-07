@@ -12,7 +12,6 @@ module.exports = {
         .addField('**prefix**', 'Bot prefix = `>`')
         .addField('**pages in this message**', '1-moderation cmds 2-misc 3-explain')
         .addField('**note**', 'use The arrows to look through The pages')
-        .addfoter('Bot developer Tanya#0672')
 
         const moderation = new Discord.MessageEmbed()
         .setTitle('moderation cmds')
@@ -37,7 +36,7 @@ module.exports = {
 
         const explain = new Discord.MessageEmbed()
         .setTitle('commands info')
-        .description('here is all the commands aliases & useage & permissios')
+        .setDescription('here is all the commands aliases & useage & permissios')
         .addField('**ban**', 'How to use: `>ban @mention`', 'aliases: b | باند', 'permissions: `BAN_MEMBERS`')
         .addField('**kick**', 'How to use `>kick @mention`', 'aliases: k', 'permissions: `KICK_MEMBERS`')
         .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want', 'aliases: m | اص', 'permissions: `MOVE_MEMBERS`')
@@ -53,7 +52,7 @@ module.exports = {
         .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention`', 'aliases: v | pfp | صور', 'permissions: `none`')
         .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo ', 'aliases: u', 'permissions: `none`')
 
-        
+
         message.author.send(info);
         message.author.send(moderation);
         message.author.send(misc);
