@@ -42,7 +42,6 @@ module.exports = {
             .addField('**ban**', 'How to use: `>ban @mention` | aliases: b | باند | permissions: `BAN_MEMBERS`')
             .addField('**kick**', 'How to use `>kick @mention`  |  aliases: k  |  permissions: `KICK_MEMBERS`')
             .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m | اص | permissions: `MOVE_MEMBERS`')
-            .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
             .addField('**unmute**', 'How to use: `>unmute @mention`  |  aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
             .addField('**setnick**', 'How to use: `>setnick @mention new nickname` | aliases: set | nick | permissions: `MANAGE_NICKNAMES`')
             .addField('**move**', 'How to use: `>move @mention` | aliases: ve | سحب | permissions: `MOVE_MEMBERS`')
@@ -56,11 +55,17 @@ module.exports = {
             .setColor('#E30B5C')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
 
+            const text = new Discord.MessageEmbed()
+            .setTitle('<:success:821777867335008297> Done')
+            .setDescription('i send a message with All my commands in Your DM')
+            .addField('<:gears:819943211530977350> Note**', 'If you did not receive any messages make sure to open your DM (Direct Messages)')
+            .setColor('#93BF6')
 
         message.author.send(info);
         message.author.send(moderation);
         message.author.send(misc);
         message.author.send(explain);
+        message.channel.send(text);
     }
 }
 //https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif 
