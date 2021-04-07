@@ -10,6 +10,8 @@ module.exports = (Discord, client, message) => {
 
     if(message.channel.type === 'dm') return;
 
+    if(!command) return;
+
 
     const validPermissions = [
         "CREATE_INSTANT_INVITE",
