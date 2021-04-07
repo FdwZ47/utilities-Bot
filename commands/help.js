@@ -35,7 +35,7 @@ module.exports = {
 
         const explain = new Discord.MessageEmbed()
         .setTitle('commands info')
-        .description('here is all the commands aliases & useage & permissios')
+        .setdescription('here is all the commands aliases & useage & permissios')
         .addField('**ban**', 'How to use: `>ban @mention` | aliases: b | باند | permissions: `BAN_MEMBERS`')
         .addField('**kick**', 'How to use `>kick @mention` | aliases: k | permissions: `KICK_MEMBERS`')
         .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m | اص | permissions: `MOVE_MEMBERS`')
