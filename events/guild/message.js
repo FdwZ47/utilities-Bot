@@ -7,7 +7,6 @@ module.exports = (Discord, client, message) => {
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
-    if (message.length = 0) return;
 
     if(message.channel.type === 'dm') return;
 
