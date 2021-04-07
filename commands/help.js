@@ -58,7 +58,7 @@ module.exports = {
             const text = new Discord.MessageEmbed()
             .setTitle('<:success:821777867335008297> Done')
             .setDescription('i send a message with All my commands in Your DM')
-            .addField('<:gears:819943211530977350> Note**', 'If you did not receive any messages make sure to open your DM (Direct Messages)')
+            .addField('<:gears:819943211530977350> Note', 'If you did not receive any messages make sure to open your DM (Direct Messages)')
             .setColor('#93BF6')
 
         message.author.send(info);
