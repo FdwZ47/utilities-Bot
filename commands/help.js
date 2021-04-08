@@ -53,7 +53,7 @@ module.exports = {
             .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u')
             .addField('**question**', 'How to use: `>question <your question>` | aliases: q | Q&A')
             .addField('**remind**', 'How to use: `>remind <time> <reason>` | aliases: re')
-            .addField('**كت**', 'How to use: `>كت` | aliases: C')
+            //.addField('**كت**', 'How to use: `>كت` | aliases: C')
             .setColor('#E30B5C')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
 
