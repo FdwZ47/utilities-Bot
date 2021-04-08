@@ -16,7 +16,7 @@ module.exports = {
       const embed = new Discord.MessageEmbed() // create embed 
         .setColor('#CAC0FF')
         //.addField('سؤالك', question)
-        .setDescription('**كت تويت**', replies[result]);
+        .addField('**كت تويت**', replies[result]);
       await message.channel.send(embed); // send embed message
     } else {
       await message.channel.send(`**كت تويت**\n${replies[result]}`); // no permissins so bot will default to a raw message
