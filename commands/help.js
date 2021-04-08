@@ -29,10 +29,11 @@ module.exports = {
          //   .setColor('#DDFAFF')
 
       //  const misc = new Discord.MessageEmbed()
-            .addField('Misc commands', 'All the commands Below everyone can use it')
+            .addField('<:success:821777867335008297> Misc commands', 'All the commands Below everyone can use it')
             .addField('user', 'this command show you the join date & account craete date')
             .addField('avatar', 'this send your avatar or others avatar')
             .addField('question', 'in this command you ask the Bot a question and he will answer the question')
+            .addField('remind', 'this command will remind you somthing')
 
         const explain = new Discord.MessageEmbed()
             .setTitle('<:info:821779298952151050> commands info')
@@ -51,6 +52,7 @@ module.exports = {
             .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور')
             .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u')
             .addField('**question**', 'How to use: `>question <your question>` | aliases: q | Q&A')
+            .addField('**remind**', 'How to use: `>remind <time> <reason>` | aliases: re')
             .setColor('#E30B5C')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
 

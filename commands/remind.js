@@ -15,6 +15,7 @@ module.exports = {
 
         const notime = new Discord.MessageEmbed()
             .setColor('#F30B04')
+            .setTitle('<:NO:828567406347419669> Invalid timer')
             .setDescription('Please specify the time')
             .addField('For example', '>remind 20m <reason>')
 
@@ -40,7 +41,7 @@ module.exports = {
 
         const remindertime = new Discord.MessageEmbed()
         .setColor('#33F304')
-        .setDescription(`\**Your reminder will go off in ${time}**`)
+        .setDescription(`\**<a:yes_1:823243336664088616> Your reminder will go off in ${time}**`)
 
         message.channel.send(remindertime)
 
