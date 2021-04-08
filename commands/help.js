@@ -10,7 +10,7 @@ module.exports = {
         const info = new Discord.MessageEmbed()
             .setTitle('<:diamondingot:822225463010525224> information')
             .addField('**<:gears:819943211530977350> prefix**', 'Bot prefix: >')
-            .setColor('#CACOFF')
+            .setColor('#CAC0FF')
 
        // const moderation = new Discord.MessageEmbed()
             .addField('<:pickaxe:821829362227347526> moderation commands', 'All the commands below is only for Moderators (members have permissions to use the command')
