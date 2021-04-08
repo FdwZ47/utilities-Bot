@@ -5,6 +5,7 @@ module.exports = {
   permissions: ["USE_EXTERNAL_EMOJIS"],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
   async execute(client, message, args, Discord) {
+    if (message.channel.id !== '796211852920487987') return message.channel.send('you can not use this command here')
     if (!args[0]) return message.channel.send('Please ask a full question!'); // return if no question is commenced
     const replies = ['اي', 'لا', 'لا طبعا', 'ممكن', 'لا تسألني']; // random responses
 
