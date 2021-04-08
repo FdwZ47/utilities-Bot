@@ -10,12 +10,11 @@ module.exports = {
         const info = new Discord.MessageEmbed()
             .setTitle('<:diamondingot:822225463010525224> information')
             .addField('**<:gears:819943211530977350> prefix**', 'Bot prefix: >')
-            .addField('**pages**', '1-moderation  |  2-misc  |  3-explain')
-            .setColor('#93BF6')
+         //   .setColor('#93BF6')
 
-        const moderation = new Discord.MessageEmbed()
-            .setTitle('<:pickaxe:821829362227347526> moderation commands')
-            .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
+       // const moderation = new Discord.MessageEmbed()
+            .addField('<:pickaxe:821829362227347526> moderation commands', 'All the commands below is only for Moderators (members have permissions to use the command')
+         //   .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
             .addField('ban', '<a:srry:825769123686252545> this bans the member')
             .addField('kick', 'this kicks the member from the server')
             .addField('mute', 'this mute the member')
@@ -27,14 +26,13 @@ module.exports = {
             .addField('hide', 'this hide the channel so no one can see it')
             .addField('show', 'this show the channel so everyone can see it')
             .addField('clear', 'this delete the messages in text channel')
-            .setColor('#DDFAFF')
+         //   .setColor('#DDFAFF')
 
-        const misc = new Discord.MessageEmbed()
-            .setTitle('Misc cmds')
-            .setDescription('All the commands Below everyone can use it')
+      //  const misc = new Discord.MessageEmbed()
+            .addField('Misc commands', 'All the commands Below everyone can use it')
             .addField('user', 'this command show you the join date & account craete date')
             .addField('avatar', 'this send your avatar or others avatar')
-            .setColor('#9542FF')
+           .setColor('#CACOFF')
 
         const explain = new Discord.MessageEmbed()
             .setTitle('<:info:821779298952151050> commands info')
@@ -47,8 +45,8 @@ module.exports = {
             .addField('**move**', 'How to use: `>move @mention` | aliases: ve | سحب | permissions: `MOVE_MEMBERS`')
             .addField('**lock**', 'How to use: `>lock` | aliases: close | قفل | permissions: `MANAGE_CHANNELS`')
             .addField('**unlock**', 'How to use: `>unlock` | aliases: open | فتح | permissions: `MANAGE_CHANNELS`')
-            .addField('**hide**', 'How to use: `>hide`', 'aliases: hi | permissions: `N/A`')
-            .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `N/A`')
+            .addField('**hide**', 'How to use: `>hide` | aliases: hi | permissions: `MANAGE_CHANNELS`')
+            .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `MANAGE_CHANNELS`')
             .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl | مسح | permissions: `MANAGE_MESSAGES`')
             .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور | permissions: `none`')
             .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u | permissions: `none`')
@@ -62,8 +60,8 @@ module.exports = {
             .setColor('#93BF6')
 
         message.author.send(info);
-        message.author.send(moderation);
-        message.author.send(misc);
+       // message.author.send(moderation);
+     //   message.author.send(misc);
         message.author.send(explain);
         message.channel.send(text);
     }

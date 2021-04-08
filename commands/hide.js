@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'hide',
     aliases: ['hi'],
-    permissions: [],
+    permissions: ["MANAGE_CHANNELS"],
     description: "this command hide the channel!",
     async execute(client, message, args, Discord) {
-        if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setTitle('For developer') .setDescription(`<:gears:819943211530977350> <@${user.id}> **only my developer** can run this command`) .setColor('#9542FF'));
+    //    if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setTitle('For developer') .setDescription(`<:gears:819943211530977350> <@${user.id}> **only my developer** can run this command`) .setColor('#9542FF'));
         let msg = await message.channel.send("<:gears:819943211530977350> just a second")
 
         try {

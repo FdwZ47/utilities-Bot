@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = (Discord, client, message) => {
     const prefix = '>';
     if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -57,15 +58,15 @@ module.exports = (Discord, client, message) => {
             invalidPerms.push(perm);
           }
         }
-        if (invalidPerms.length){
-          return message.channel.send('You dont have permissions to do that');
+        if (invalidPerms.length) {
+          return message.channel.sennd(new Discord.MessageEmbed() .setDescription('<a:srry:825769123686252545> you do not have **permissions** to use this command') .setColor('RANDOM'));
         }
       }
 
       try{
         if(command) command.execute(client, message, args, Discord);
       } catch(err){
-          message.reply("there was an error trying to execute this command!")
+          message.reply("there was an error trying to execute this command")
           console.log(err);
       }
       
