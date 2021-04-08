@@ -32,7 +32,7 @@ module.exports = {
             .addField('Misc commands', 'All the commands Below everyone can use it')
             .addField('user', 'this command show you the join date & account craete date')
             .addField('avatar', 'this send your avatar or others avatar')
-            .addField('question', 'in thid command you ask the Bot a question and he will answer the question')
+            .addField('question', 'in this command you ask the Bot a question and he will answer the question')
 
         const explain = new Discord.MessageEmbed()
             .setTitle('<:info:821779298952151050> commands info')
