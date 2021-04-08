@@ -17,7 +17,7 @@ module.exports = {
         .setColor('#CAC0FF')
         .addField('سؤالك', question)
         .addField('جوابي', replies[result])
-        .setFooter(`question from ${user.username}`)
+        .setFooter(`question from ${user.username}`);
       await message.channel.send(embed); // send embed message
     } else {
       await message.channel.send(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`); // no permissins so bot will default to a raw message
