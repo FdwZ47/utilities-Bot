@@ -4,7 +4,7 @@ module.exports = {
   aliases: ['q','q&a'],
   permissions: ["USE_EXTERNAL_EMOJIS"],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
-  async execute(client, message, args) {
+  async execute(client, message, args, Discord) {
     if (!args[0]) return message.channel.send('Please ask a full question!'); // return if no question is commenced
     const replies = ['Yes.', 'No.', 'Never.', 'Definitely.', 'Ask again later.']; // random responses
 
@@ -12,7 +12,7 @@ module.exports = {
     const question = args.join(' '); // join the args(Array<string>) to a question string
     // check permissions for embed
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
-      const embed = new MessageEmbed() // create embed 
+      const embed = Discord.MessageEmbed() // create embed 
         .setAuthor('The 8 Ball says...')
         .setColor('ORANGE').addField('Question:', question)
         .addField('Answer:', replies[result]);
