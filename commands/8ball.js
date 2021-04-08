@@ -12,7 +12,7 @@ module.exports = {
     const question = args.join(' '); // join the args(Array<string>) to a question string
     // check permissions for embed
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
-      const embed = Discord.MessageEmbed() // create embed 
+      const embed = new Discord.MessageEmbed() // create embed 
         .setAuthor('The 8 Ball says...')
         .setColor('ORANGE').addField('Question:', question)
         .addField('Answer:', replies[result]);
