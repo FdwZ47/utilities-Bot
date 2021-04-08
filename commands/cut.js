@@ -16,10 +16,10 @@ module.exports = {
       const embed = new Discord.MessageEmbed() // create embed 
         .setColor('#CAC0FF')
         //.addField('سؤالك', question)
-        .setDescription(replies[result]);
+        .setDescription('**كت تويت**', replies[result]);
       await message.channel.send(embed); // send embed message
     } else {
-      await message.channel.send(`${replies[result]}`); // no permissins so bot will default to a raw message
+      await message.channel.send(`**كت تويت**\n${replies[result]}`); // no permissins so bot will default to a raw message
     }
   },
 };

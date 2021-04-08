@@ -34,6 +34,7 @@ module.exports = {
             .addField('avatar', 'this send your avatar or others avatar')
             .addField('question', 'in this command you ask the Bot a question and he will answer the question')
             .addField('remind', 'this command will remind you something')
+            .addField('كت')
 
         const explain = new Discord.MessageEmbed()
             .setTitle('<:info:821779298952151050> commands info')
