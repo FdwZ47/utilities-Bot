@@ -32,6 +32,7 @@ module.exports = {
             .addField('Misc commands', 'All the commands Below everyone can use it')
             .addField('user', 'this command show you the join date & account craete date')
             .addField('avatar', 'this send your avatar or others avatar')
+            .addField('question', 'in thid command you ask the Bot a question and he will answer the question')
            .setColor('#CACOFF')
 
         const explain = new Discord.MessageEmbed()
@@ -48,9 +49,10 @@ module.exports = {
             .addField('**hide**', 'How to use: `>hide` | aliases: hi | permissions: `MANAGE_CHANNELS`')
             .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `MANAGE_CHANNELS`')
             .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl | مسح | permissions: `MANAGE_MESSAGES`')
-            .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور | permissions: `none`')
-            .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u | permissions: `none`')
-            .setColor('#E30B5C')
+            .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور')
+            .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u')
+            .addField('**question**', 'How to use: `>question <your question>` | aliases: q | Q&A')
+           // .setColor('#E30B5C')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
 
             const text = new Discord.MessageEmbed()
