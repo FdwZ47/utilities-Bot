@@ -59,8 +59,8 @@ module.exports = {
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
 
             const text = new Discord.MessageEmbed()
-            .setDescription('i send a message with All my commands in Your DM :mailbox_with_mail:')
-            .addField('If you did not receive any messages make sure to open your Direct Messages')
+            .setDescription('i send a message with All my commands in Your DM :mailbox_with_mail: | If you did not receive any messages make sure to open your **Direct Messages**')
+        //    .addField('If you did not receive any messages make sure to open your Direct Messages')
             .setColor('#93BF6')
 
         message.author.send(info);
