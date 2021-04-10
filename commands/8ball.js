@@ -19,7 +19,7 @@ module.exports = {
     // check permissions for embed
     if (message.channel.permissionsFor(message.guild.me).has('EMBED_LINKS')) {
       const embed = new Discord.MessageEmbed() // create embed 
-        .setColor('#CAC0FF')
+        .setColor('RANDOM')
         .addField('سؤالك', question)
         .addField('جوابي', replies[result]);
       await message.channel.send(embed); // send embed message
