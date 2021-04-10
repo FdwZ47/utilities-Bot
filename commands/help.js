@@ -34,7 +34,7 @@ module.exports = {
             .addField('avatar', 'this send your avatar or others avatar')
             .addField('question', 'in this command you ask the Bot a question and he will answer the question')
             .addField('remind', 'this command will remind you something')
-            .addField('guess', 'guess a number from 1 - 1500')
+            .addField('guess', 'guess a number from 1 - 50000')
           //  .addField('كت')
 
         const explain = new Discord.MessageEmbed()
@@ -72,7 +72,7 @@ module.exports = {
         message.author.send(explain);
         message.channel.send(text);
 
-        if (!author) return message.channel.send('make sure to open your Direct Messages so i can send messages to You Directly')
+      
     }
 }
 //https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif 

@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 function guildNumberMap(message) {
     const guildId = message.guild.id;
 
-    var number = Math.floor(Math.random() * 20000) + 1;
+    var number = Math.floor(Math.random() * 50000) + 1;
     // If there is no command running map for the guild, create one
     if (!guildNumber.get(guildId)) {
         guildNumber.set(guildId, number);
@@ -30,7 +30,7 @@ module.exports = {
         usage: 'guesseasy <guesseasy number>',
         content: "Try and guess the number!",
     },
-    async execute(message, args, client, Discord) {
+    async execute(client, message, args, Discord) {
         const { member, channel, guild } = message;
 
         const provideaguess = new Discord.MessageEmbed()
@@ -39,7 +39,7 @@ module.exports = {
 
         const pickinganumber = new Discord.MessageEmbed()
             .setColor('#33F304')
-            .setDescription('**Picking a number between 1 and 20000**')
+            .setDescription('**Picking a number between 1 and 50000**')
 
 
 
