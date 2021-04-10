@@ -34,7 +34,7 @@ module.exports = {
             .addField('avatar', 'this send your avatar or others avatar')
             .addField('question', 'in this command you ask the Bot a question and he will answer the question')
             .addField('remind', 'this command will remind you something')
-            .addField('guess', 'guess a number from 1 - 50000')
+            .addField('guess', 'guess a number between 1 - 150')
           //  .addField('كت')
 
         const explain = new Discord.MessageEmbed()

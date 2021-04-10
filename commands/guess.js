@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 function guildNumberMap(message) {
     const guildId = message.guild.id;
 
-    var number = Math.floor(Math.random() * 2) + 1;
+    var number = Math.floor(Math.random() * 150) + 1;
     // If there is no command running map for the guild, create one
     if (!guildNumber.get(guildId)) {
         guildNumber.set(guildId, number);
@@ -32,14 +32,19 @@ module.exports = {
     },
     async execute(client, message, args, Discord) {
         const { member, channel, guild } = message;
+        
+        const games = new Discord.MessageEmbed()
+        .setDescription('You can only use this command in <#796211852920487987>')
+        .setColor('#9D6D55')
+        if (message.channel.id !== '796211852920487987') return message.channel.send(games)
 
         const provideaguess = new Discord.MessageEmbed()
             .setColor('#F30B04')
-            .setDescription(`**❌ Please provide a guess!**`)
+            .setDescription(`**<:NO:828567406347419669> Please pick a number**`)
 
         const pickinganumber = new Discord.MessageEmbed()
             .setColor('#33F304')
-            .setDescription('**Picking a number between 1 and 2**')
+            .setDescription('**Picking a number between 1 and 150**')
 
 
 
@@ -58,7 +63,7 @@ module.exports = {
 
             const guessedthenumber = new Discord.MessageEmbed()
                 .setColor('#33F304')
-                .setDescription(`✅ Perfect, <@${member.id}>the number was ${guildNumber.get(guild.id)}, it only took you ${attempts.attempts} attempts!`)
+                .setDescription(`<:success:821777867335008297> Correct <@${member.id}> The number was ${guildNumber.get(guild.id)}`)
 
             channel.send(guessedthenumber);
             guildNumber.delete(guild.id);
@@ -67,11 +72,11 @@ module.exports = {
 
             return;
         } else if (+ guess < guildNumber.get(guild.id)) {
-            return message.reply(`${guess} Is too low!`);
+            return message.reply(`<:NO:828567406347419669> No ${guess} Is too low Try again`);
         } else if (+guess > guildNumber.get(guild.id)) {
-            return message.reply(`${guess} Is too high!`);
+            return message.reply(`<:NO:828567406347419669> No ${guess} Is too high Try again`);
         } else {
-            return message.reply("Invalid number please try again");
+            return message.reply("Please pick a real number between **1 - 150**");
         }
     },
 };
