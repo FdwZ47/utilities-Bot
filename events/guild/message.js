@@ -27,7 +27,7 @@ module.exports = (Discord, client, message) => {
         "STREAM",
         "VIEW_CHANNEL",
         "SEND_MESSAGES",
-        "SEND_TTS_MESSAGES",
+        "SEND_TTS_MESSAGES",  
         "MANAGE_MESSAGES",
         "EMBED_LINKS",
         "ATTACH_FILES",

@@ -34,33 +34,35 @@ module.exports = {
             .addField('avatar', 'this send your avatar or others avatar')
             .addField('question', 'in this command you ask the Bot a question and he will answer the question')
             .addField('remind', 'this command will remind you something')
+            .addField('guess', 'guess a number from 1 - 1500')
           //  .addField('كت')
 
         const explain = new Discord.MessageEmbed()
             .setTitle('<:info:821779298952151050> commands info')
             .setDescription('here is all the commands aliases & useage & permissios')
-            .addField('**ban**', 'How to use: `>ban @mention` | aliases: b | باند | permissions: `BAN_MEMBERS`')
+            .addField('**ban**', 'How to use: `>ban @mention` | aliases: b , باند | permissions: `BAN_MEMBERS`')
             .addField('**kick**', 'How to use `>kick @mention`  |  aliases: k  |  permissions: `KICK_MEMBERS`')
-            .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m | اص | permissions: `MOVE_MEMBERS`')
-            .addField('**unmute**', 'How to use: `>unmute @mention`  |  aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
-            .addField('**setnick**', 'How to use: `>setnick @mention new nickname` | aliases: set | nick | permissions: `MANAGE_NICKNAMES`')
-            .addField('**move**', 'How to use: `>move @mention` | aliases: ve | سحب | permissions: `MOVE_MEMBERS`')
-            .addField('**lock**', 'How to use: `>lock` | aliases: close | قفل | permissions: `MANAGE_CHANNELS`')
-            .addField('**unlock**', 'How to use: `>unlock` | aliases: open | فتح | permissions: `MANAGE_CHANNELS`')
+            .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m , اص | permissions: `MOVE_MEMBERS`')
+            .addField('**unmute**', 'How to use: `>unmute @mention`  |  aliases: un , تكلم , permissions: `MOVE_MEMBERS`')
+            .addField('**setnick**', 'How to use: `>setnick @mention new nickname` | aliases: set , nick | permissions: `MANAGE_NICKNAMES`')
+            .addField('**move**', 'How to use: `>move @mention` | aliases: ve , سحب | permissions: `MOVE_MEMBERS`')
+            .addField('**lock**', 'How to use: `>lock` | aliases: close , قفل | permissions: `MANAGE_CHANNELS`')
+            .addField('**unlock**', 'How to use: `>unlock` | aliases: open , فتح | permissions: `MANAGE_CHANNELS`')
             .addField('**hide**', 'How to use: `>hide` | aliases: hi | permissions: `MANAGE_CHANNELS`')
             .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `MANAGE_CHANNELS`')
-            .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl | مسح | permissions: `MANAGE_MESSAGES`')
-            .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور')
+            .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl , مسح | permissions: `MANAGE_MESSAGES`')
+            .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v , pfp , صور')
             .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u')
-            .addField('**question**', 'How to use: `>question <your question>` | aliases: q | Q&A')
+            .addField('**question**', 'How to use: `>question <your question>` | aliases: q , Q&A')
             .addField('**remind**', 'How to use: `>remind <time> <reason>` | aliases: re')
+            .addField('**guess**', 'How to use: `>guess <number>` | aliases: g , توقع')
             //.addField('**كت**', 'How to use: `>كت` | aliases: C')
             .setColor('#E30B5C')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
 
             const text = new Discord.MessageEmbed()
-            .setTitle('i send a message with All my commands in Your DM :mailbox_with_mail:')
-            .setDescription('If you did not receive any messages make sure to open your Direct Messages')
+            .setDescription('**i send a message with All my commands in Your DM :mailbox_with_mail:**')
+           // .setDescription('If you did not receive any messages make sure to open your Direct Messages')
         //    .addField('If you did not receive any messages make sure to open your Direct Messages')
             .setColor('#93BF6')
 
@@ -69,6 +71,8 @@ module.exports = {
      //   message.author.send(misc);
         message.author.send(explain);
         message.channel.send(text);
+
+        if (!author) return message.channel.send('make sure to open your Direct Messages so i can send messages to You Directly')
     }
 }
 //https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif 
