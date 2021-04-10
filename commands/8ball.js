@@ -12,7 +12,7 @@ module.exports = {
         if (message.channel.id !== '796211852920487987') return message.channel.send(games) 
 
     if (!args[0]) return message.channel.send('Please ask a full question!'); // return if no question is commenced
-    const replies = ['اي', 'لا', 'اكيد']; // random responses
+    const replies = ['اي', 'لا <a:srry:825769123686252545>', 'اكيد']; // random responses
 
     const result = Math.floor(Math.random() * replies.length); // Get a random respons for the array
     const question = args.join(' '); // join the args(Array<string>) to a question string
