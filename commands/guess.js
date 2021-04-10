@@ -5,7 +5,7 @@ const Discord = require('discord.js');
 function guildNumberMap(message) {
     const guildId = message.guild.id;
 
-    var number = Math.floor(Math.random() * 50000) + 1;
+    var number = Math.floor(Math.random() * 2) + 1;
     // If there is no command running map for the guild, create one
     if (!guildNumber.get(guildId)) {
         guildNumber.set(guildId, number);
@@ -39,7 +39,7 @@ module.exports = {
 
         const pickinganumber = new Discord.MessageEmbed()
             .setColor('#33F304')
-            .setDescription('**Picking a number between 1 and 50000**')
+            .setDescription('**Picking a number between 1 and 2**')
 
 
 
