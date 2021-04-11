@@ -13,9 +13,9 @@ module.exports = {
             .addField('Bot developer ID', '755767643331362916')
             .setColor('#CAC0FF')
 
-        const moderation = new Discord.MessageEmbed()
-            .setTitle('<:pickaxe:821829362227347526> moderation commands')
-            .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
+       // const moderation = new Discord.MessageEmbed()
+         //   .setTitle('<:pickaxe:821829362227347526> moderation commands')
+            .addField('<:pickaxe:821829362227347526> moderation commands', 'All the commands below is only for Moderators (members have permissions to use the command)')
             .addField('ban', '<a:srry:825769123686252545> this bans the member')
             .addField('kick', 'this kicks the member from the server')
             .addField('mute', 'this mute the member')
@@ -56,7 +56,7 @@ module.exports = {
             .addField('**question**', 'How to use: `>question <your question>` | aliases: q , Q&A')
             .addField('**remind**', 'How to use: `>remind <time> <reason>` | aliases: re')
             .addField('**guess**', 'How to use: `>guess <number>` | aliases: g , توقع')
-            .addField('**كت**', 'How to use: `>كت` | aliases: C')
+           // .addField('**كت**', 'How to use: `>كت` | aliases: C')
             .setColor('#CAC0FF')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/attachments/820334596524081163/830671156310179870/a_07cc20caaa603f3e6d0f73de84cae94a.gif')
 
