@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'unmute',
     aliases: ['un', 'تكلم'],
-    permissions: ["MUTE_MEMBERS"],
+    permissions: ["ADMINISTRATOR"],
     description: "this unmutes a member!",
     execute(client, message, args, Discord){
         const target = message.mentions.users.first();
