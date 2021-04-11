@@ -37,9 +37,8 @@ module.exports = {
             .addField('guess', 'guess a number between 1 - 150')
           //  .addField('كت')
 
-        const explain = new Discord.MessageEmbed()
-            .setTitle('<:info:821779298952151050> commands info')
-            .setDescription('here is all the commands aliases & useage & permissios')
+       // const explain = new Discord.MessageEmbed()
+            .addField('<:info:821779298952151050> commands info', 'here is all the commands aliases & useage & permissios')
             .addField('**ban**', 'How to use: `>ban @mention` | aliases: b , باند | permissions: `BAN_MEMBERS`')
             .addField('**kick**', 'How to use `>kick @mention`  |  aliases: k  |  permissions: `KICK_MEMBERS`')
             .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m , اص | permissions: `MOVE_MEMBERS`')
@@ -57,8 +56,8 @@ module.exports = {
             .addField('**remind**', 'How to use: `>remind <time> <reason>` | aliases: re')
             .addField('**guess**', 'How to use: `>guess <number>` | aliases: g , توقع')
             //.addField('**كت**', 'How to use: `>كت` | aliases: C')
-            .setColor('#E30B5C')
-            .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/a_e320b75321aad33243239820f4b92c97.gif?size=256&f=.gif')
+            //.setColor('#E30B5C')
+            .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/attachments/820334596524081163/830671156310179870/a_07cc20caaa603f3e6d0f73de84cae94a.gif')
 
             const text = new Discord.MessageEmbed()
             .setDescription('**i send a message with All my commands in Your DM :mailbox_with_mail:**')

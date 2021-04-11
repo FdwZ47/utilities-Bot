@@ -123,6 +123,7 @@ module.exports = {
         .addField('user', 'this command show you the join date & account craete date')
         .addField('avatar', 'this send your avatar or others avatar')
 
+
         const explain = new Discord.MessageEmbed()
         .setTitle('commands info')
         .setDescription('here is all the commands aliases & useage & permissios')

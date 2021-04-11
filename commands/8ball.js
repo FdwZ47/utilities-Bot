@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'question',
   aliases: ['q','q&a'],
+  cooldown: 10,
   permissions: ["USE_EXTERNAL_EMOJIS"],
   description: 'Asks a question and let the bot determine your fate :sparkler:',
   async execute(client, message, args, Discord) {
