@@ -13,7 +13,7 @@ module.exports = {
             let memberTarget= message.guild.members.cache.get(target.id);
             
             memberTarget.roles.remove(muteRole.id);
-            message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for ${user.username}, -Warning 3`) .setColor('#93BFE6'));
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${memberTarget.user.id}>, -Warning 3`) .setColor('#93BFE6'));
         } else{
             message.channel.send('<:idk:822217580567592991> I cannot find this member');
         }

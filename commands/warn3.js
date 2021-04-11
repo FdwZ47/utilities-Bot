@@ -16,11 +16,11 @@ module.exports = {
 
             if (!args[1]) {
                 memberTarget.roles.add(warnRole.id);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> Changed roles for ${user.username}, +Warning 3`) .setColor('#E30B5C'));
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> Changed roles for <@${memberTarget.user.id}>, +Warning 3`) .setColor('#E30B5C'));
                 return
             }
             memberTarget.roles.add(warnRole.id);
-            message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> Changed roles for ${user.username}, +Warning 3 for **${ms(ms(args[1]))}**`) .setColor('#E30B5C'));
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> Changed roles for <@${memberTarget.user.id}>, +Warning 3 for **${ms(ms(args[1]))}**`) .setColor('#E30B5C'));
 
             setTimeout(function () {
                 memberTarget.roles.remove(warnRole.id);
