@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: '-2',
     aliases: [],
-    permissions: ["MUTE_MEMBERS"],
+    permissions: ["ADMINISTRATOR"],
     description: "this warn the member",
     execute(client, message, args, Discord){
         const target = message.mentions.users.first();
