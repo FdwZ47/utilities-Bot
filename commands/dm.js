@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 module.exports = {
     name: 'dm',
     aliases: [],
@@ -11,10 +12,10 @@ module.exports = {
         message.guild.members.cache.get(args[0])?.user;
 
         const str = args.slice(1).join(" ");
-        if (message.content.incloudes("-a")) {
+        if (message.content.includes("-a")) {
             user.send(str.replace("-a", ""));
         } else {
             user.send(`${str}`);
         }
-    }
-}    
+    },
+};
