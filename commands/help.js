@@ -9,12 +9,13 @@ module.exports = {
 
         const info = new Discord.MessageEmbed()
             .setTitle('<:diamondingot:822225463010525224> information')
-            .addField('**<:gears:819943211530977350> prefix**', 'Bot prefix: >')
+            .addField('**<:gears:819943211530977350> prefix**', 'Bot prefix = **>**')
+            .addField('Bot developer ID', '755767643331362916')
             .setColor('#CAC0FF')
 
-       // const moderation = new Discord.MessageEmbed()
-            .addField('<:pickaxe:821829362227347526> moderation commands', 'All the commands below is only for Moderators (members have permissions to use the command')
-         //   .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
+        const moderation = new Discord.MessageEmbed()
+            .setTitle('<:pickaxe:821829362227347526> moderation commands')
+            .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
             .addField('ban', '<a:srry:825769123686252545> this bans the member')
             .addField('kick', 'this kicks the member from the server')
             .addField('mute', 'this mute the member')
@@ -37,7 +38,7 @@ module.exports = {
             .addField('guess', 'guess a number between 1 - 150')
           //  .addField('كت')
 
-       // const explain = new Discord.MessageEmbed()
+        const explain = new Discord.MessageEmbed()
             .addField('<:info:821779298952151050> commands info', 'here is all the commands aliases & useage & permissios')
             .addField('**ban**', 'How to use: `>ban @mention` | aliases: b , باند | permissions: `BAN_MEMBERS`')
             .addField('**kick**', 'How to use `>kick @mention`  |  aliases: k  |  permissions: `KICK_MEMBERS`')
@@ -55,8 +56,8 @@ module.exports = {
             .addField('**question**', 'How to use: `>question <your question>` | aliases: q , Q&A')
             .addField('**remind**', 'How to use: `>remind <time> <reason>` | aliases: re')
             .addField('**guess**', 'How to use: `>guess <number>` | aliases: g , توقع')
-            //.addField('**كت**', 'How to use: `>كت` | aliases: C')
-            //.setColor('#E30B5C')
+            .addField('**كت**', 'How to use: `>كت` | aliases: C')
+            .setColor('#CAC0FF')
             .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/attachments/820334596524081163/830671156310179870/a_07cc20caaa603f3e6d0f73de84cae94a.gif')
 
             const text = new Discord.MessageEmbed()
