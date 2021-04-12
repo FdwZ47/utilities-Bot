@@ -8,7 +8,9 @@ module.exports = {
     execute(client, message, args, Discord) {
         if (message.channel.id !== '798664931359719485') return;
         if (args[0]) {
-            const user = message.mentions.users.first();
+            const user = message.mentions.users.first() ||
+            message.guild.members.cache.get(args[0])?.user;
+            
             if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
 
 

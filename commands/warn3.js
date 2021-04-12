@@ -6,7 +6,10 @@ module.exports = {
     permissions: ["MUTE_MEMBERS"],
     description: "this warn the member",
     execute(client, message, args, Discord) {
-        const target = message.mentions.users.first();
+        
+        const target = message.mentions.users.first() ||
+        message.guild.members.cache.get(args[0])?.user;
+
         if (target) {
    //         let mainRole = message.guild.roles.cache.find(role => role.name === 'tester');
             let warnRole = message.guild.roles.cache.find(role => role.name === 'Warning 3');

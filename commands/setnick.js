@@ -6,7 +6,10 @@ module.exports = {
     permissions: ["MANAGE_NICKNAMES"],
     description: "this command change others nickname",
     async execute(client, message, args, Discord) {
-        let user = message.mentions.users.first();
+        
+        let user = message.mentions.users.first() ||
+        message.guild.members.cache.get(args[0])?.user;
+
         if(!user) return message.channel.send("make sure to mention a user after the command")
 
         let nick = args.slice(1).join(" ")

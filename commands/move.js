@@ -5,7 +5,10 @@ module.exports = {
     permissions: ["MOVE_MEMBERS"],
     description: "this command move the members!",
     execute(client, message, args, Discord) {
-        const member = message.mentions.members.first();
+        
+        const member = message.mentions.users.first() ||
+        message.guild.members.cache.get(args[0])?.user;
+
         if(!member) return message.channel.send(new Discord.MessageEmbed() .setTitle('<:NO:828567406347419669> Invalid user') .setDescription('please make sure to mention a user after the command **DO NOT JUST USE THE ID**') .setColor('RED'));
         if(!member.voice.channel) return message.channel.send(new Discord.MessageEmbed() .setDescription('<:NO:828567406347419669> The member you mentioned is not in a voice channel') .setColor('RED'));
 
