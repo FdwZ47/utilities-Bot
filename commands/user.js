@@ -8,7 +8,12 @@ module.exports = {
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your user info",
     execute(client, message, args, Discord) {
-        if (message.channel.id !== '798664931359719485') return;
+
+      const bot = new Discord.MessageEmbed()
+      .setDescription('You can only use this command in <#798664931359719485>')
+      .setColor('#9D6D55')
+      if (message.channel.id !== '798664931359719485') return message.channel.send(bot) 
+
         let userArray = message.content.split(" ");
         let userArgs = userArray.slice(1);
         let member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;

@@ -11,7 +11,10 @@ module.exports = {
         message.mentions.users.first() ||
         message.guild.members.cache.get(args[0])?.user;
 
+      //  if(!user) return message.channel.send('please specific a user useing Mention or ID')
+
         const str = args.slice(1).join(" ");
+   //     if(!str) return message.channel.send(new Discord.MessageEmbed() .setDescription('please input something to send it for this user') .setColor('RED'));
         if (message.content.includes("-a")) {
             user.send(str.replace("-a", ""));
         } else {

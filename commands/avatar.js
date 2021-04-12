@@ -6,12 +6,17 @@ module.exports = {
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your avatar(profile icon)",
     execute(client, message, args, Discord) {
-        if (message.channel.id !== '798664931359719485') return;
+
+        const bot = new Discord.MessageEmbed()
+        .setDescription('You can only use this command in <#798664931359719485>')
+        .setColor('#9D6D55')
+        if (message.channel.id !== '798664931359719485') return message.channel.send(bot) 
+    
         if (args[0]) {
             const user = message.mentions.users.first() ||
             message.guild.members.cache.get(args[0])?.user;
             
-            if (!user) return message.channel.send('please make sure to mention the user after command **don t Just use ID**');
+            if (!user) return message.channel.send(new Discord.MessageEmbed() .setDescription('Please make sure to specific a user and make sure he is the server') .setColor('RED'));
 
 
             return message.channel.send(new Discord.MessageEmbed() .setTitle(`${user.username}'s avatar`) .setDescription(`[Avatar link](${user.avatarURL()})`) .setImage(user.displayAvatarURL({ dynamic: true, size: 2048 })) .setColor('#8FA0EA'));
