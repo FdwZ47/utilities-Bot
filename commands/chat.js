@@ -14,10 +14,10 @@ module.exports = {
 
 
        // let channels = message.mentions.channels.first()
-        const msg = args.join(" ")
-        if(!msg) return message.channel.send('please input something')
+       // const msg = args.join(" ")
+       // if(!msg) return message.channel.send('please input something')
         
-        message.channel.send(msg)
+       rchannel.send(args.join(" "))
 
       //message.channel.send(msg)
         
