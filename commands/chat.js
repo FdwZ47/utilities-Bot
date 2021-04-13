@@ -7,11 +7,14 @@ module.exports = {
     async execute(client, message, args, Discord){
         if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setTitle('<:NO:828567406347419669> For developer') .setDescription('only my developer can run this command') .setColor('#9542FF'));
   
-        const rchannel = message.guild.channels.cache.get(args[0])
-        if(!rchannel) return message.channel.send('please specific a channel')
+        const rchannel = message.mentions.channels.first();
+        if(!rchannel) return message.channel.send('please specific a channel');
+
+        if(!args[1]) return message.channel.send('please input something');
+
 
        // let channels = message.mentions.channels.first()
-        const msg = message.content.join("")
+        const msg = args.join(" ")
         if(!msg) return message.channel.send('please input something')
         
         channel.send(msg)
