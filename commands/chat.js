@@ -13,7 +13,7 @@ module.exports = {
        // let channels = message.mentions.channels.first()
         let msg = message.content.join("")
         
-        message.guild.channels.find(c => c.id == rchannel).send(message);
+        message.channels(c => rchannel).send(message);
 
       //message.channel.send(msg)
         
