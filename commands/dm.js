@@ -19,6 +19,7 @@ module.exports = {
             user.send(str.replace("-a", ""));
         } else {
             user.send(`${str}`);
+            message.delete();
         }
     },
 };
