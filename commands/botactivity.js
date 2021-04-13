@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
     name: 'bot activity',
-    aliases: ['botact'],
+    aliases: ['botact', 'bot', 'at'],
     permissions: [],
     description: "this command change the bot activity",
     execute(client, message, args, Discord){

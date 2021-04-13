@@ -7,10 +7,9 @@ module.exports = {
     description: "this command change others nickname",
     async execute(client, message, args, Discord) {
         
-        let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === args.slice(0).join(" ") || x.user.username === args[0]) || message.member;
 
-//        let user = message.mentions.users.first() ||
-  //      message.guild.members.cache.get(args[0])?.user;
+        let user = message.mentions.users.first() ||
+        message.guild.members.cache.get(args[0])?.user;
 
         if(!user) return message.channel.send("make sure to mention a user after the command")
 

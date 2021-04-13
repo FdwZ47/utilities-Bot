@@ -5,9 +5,9 @@ module.exports = {
     permissions: ["BAN_MEMBERS"],
     description: "this command bans a member!",
     execute(client, message, args, Discord){
-        let member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;
-
-//        const member = message.mentions.users.first();
+        
+        const member = message.mentions.users.first() ||
+        message.guild.members.cache.get(args[0])?.user;
 
         if(member){
             const memberTarget = message.guild.members.cache.get(member.id);

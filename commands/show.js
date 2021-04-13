@@ -6,13 +6,13 @@ module.exports = {
     description: "this command showed the channel!",
     async execute(client, message, args, Discord) {
        // if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setTitle('For developer') .setDescription(`<:gears:819943211530977350> <@${user.id}> **only my developer** can run this command`) .setColor('#9542FF'));
-        let msg = await message.channel.send("<:gears:819943211530977350> just a second")
+   //     let msg = await message.channel.send("<:gears:819943211530977350> just a second")
 
         try {
-            message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == "@everyone"), {
+            message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == '@everyone'), {
                 VIEW_CHANNEL: true,
             })
-            msg.edit("<a:yes_1:823243336664088616> channel has been **showed**")
+            message.channel.send('a:yes_1:823243336664088616> channel has been showed')
         }catch(e) {
             console.log(e)
         }

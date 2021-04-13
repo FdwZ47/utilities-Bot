@@ -13,10 +13,9 @@ module.exports = {
         if (message.channel.id !== '798664931359719485') return message.channel.send(bot) 
     
         if (args[0]) {
-            let user = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;
-
-//            const user = message.mentions.users.first() ||
-  //          message.guild.members.cache.get(args[0])?.user;
+ 
+            const user = message.mentions.users.first() ||
+            message.guild.members.cache.get(args[0])?.user;
             
             if (!user) return message.channel.send(new Discord.MessageEmbed() .setDescription('Please make sure to specific a user and make sure he is the server') .setColor('RED'));
 
