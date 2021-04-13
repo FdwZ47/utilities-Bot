@@ -7,12 +7,8 @@ module.exports = {
     description: "this warn the member",
     execute(client, message, args, Discord) {
         
-        let userArray = message.content.split(" ");
-        let userArgs = userArray.slice(1);
-        let target = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(" ") || x.user.username === userArgs[0]) || message.member;
-
-       // const target = message.mentions.users.first() ||
-        //message.guild.members.cache.get(args[0])?.user;
+        const target = message.mentions.users.first() ||
+        message.guild.members.cache.get(args[0])?.user;
 
         if (target) {
    //         let mainRole = message.guild.roles.cache.find(role => role.name === 'tester');
