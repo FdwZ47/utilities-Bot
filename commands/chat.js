@@ -11,11 +11,11 @@ module.exports = {
         if(!channels) return message.channel.send('please specific a channel')
 
        // let channels = message.mentions.channels.first()
-        let message = message.content.join("")
+        let msg = message.content.join("")
         
       //  message.guild.channels.find(c => c.id == channels.id).send(message);
 
-        channels.channel.send(message)
+        channels.channel.send(msg)
         
 
     }
