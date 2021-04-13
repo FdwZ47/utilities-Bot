@@ -17,7 +17,7 @@ module.exports = {
         const msg = args.join(" ")
         if(!msg) return message.channel.send('please input something')
         
-        channel.send(msg)
+        message.channel.send(msg)
 
       //message.channel.send(msg)
         
