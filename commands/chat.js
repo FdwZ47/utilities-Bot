@@ -15,7 +15,7 @@ module.exports = {
         
       //  message.guild.channels.find(c => c.id == channels.id).send(message);
 
-        channels.channel.send(msg)
+      message.channel.send(msg)
         
 
     }
