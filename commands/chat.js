@@ -12,8 +12,9 @@ module.exports = {
 
        // let channels = message.mentions.channels.first()
         let msg = message.content.join("")
+        if(!msg) return message.channel.send('please input something')
         
-        rchannel.channel.send(msg);
+        rchannel.channel.send(msg)
 
       //message.channel.send(msg)
         
