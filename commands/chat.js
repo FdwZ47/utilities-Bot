@@ -13,7 +13,7 @@ module.exports = {
        // let channels = message.mentions.channels.first()
         let msg = message.content.join("")
         
-        message.channels(rchannel).send(message);
+        rchannel.channel.send(msg);
 
       //message.channel.send(msg)
         
