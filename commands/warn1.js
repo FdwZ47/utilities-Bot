@@ -32,5 +32,6 @@ module.exports = {
         }// else {
            // message.channel.send('<:idk:822217580567592991> I can not find this member');
         //}
+        message.delete();
     }
 }
