@@ -11,7 +11,7 @@ module.exports = {
         let user = message.mentions.users.first() ||
         message.guild.members.cache.get(args[0])?.user;
 
-        if(!user) return message.channel.send("make sure to mention a user after the command")
+        if(!user) return; // message.channel.send("make sure to mention a user after the command")
 
         let nick = args.slice(1).join(" ") 
         if(!nick) return message.channel.send("please input a nickname")

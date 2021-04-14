@@ -29,8 +29,8 @@ module.exports = {
                 memberTarget.roles.remove(warnRole.id);
              //   message.channel.send(`**hi <@${memberTarget.user.id}> you have been succsessfully unmuted** <a:yes_1:823243336664088616>`);
             }, ms(args[1]));
-        } else {
-            message.channel.send('<:idk:822217580567592991> I can not find this member');
-        }
+        }// else {
+           // message.channel.send('<:idk:822217580567592991> I can not find this member');
+        //}
     }
 }

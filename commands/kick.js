@@ -13,8 +13,8 @@ module.exports = {
             memberTarger.kick();
 
             message.channel.send("user has been kicked");
-        }else{
-            message.channel.send('<:idk:822217580567592991> I can t find this member');
-        }
+        }//else{
+          //  message.channel.send('<:idk:822217580567592991> I can t find this member');
+        //}
     }
 }
