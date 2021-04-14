@@ -19,6 +19,7 @@ module.exports = {
         .setColor('#DDFAFF')
 
         message.channel.send(embed)
+        message.delete();
 
     }
 }

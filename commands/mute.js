@@ -20,11 +20,12 @@ module.exports = {
             if (!args[1]) {
                 memberTarget.roles.add(muteRole.id);
                 message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> <@${memberTarget.user.id}> has been **muted**`) .setColor('#93BFE6'));
+                message.delete();
                 return
             }
             memberTarget.roles.add(muteRole.id);
             message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> <@${memberTarget.user.id}> has been muted for **${ms(ms(args[1]))}**`) .setColor('#93BFE6'));
-
+            message.delete();
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);
            //     message.channel.send(`**hi <@${memberTarget.user.id}> you have been succsessfully unmuted** <a:yes_1:823243336664088616>`);
@@ -32,5 +33,6 @@ module.exports = {
         }// else {
            // message.channel.send('<:idk:822217580567592991> I cannot find this member');
        // }
+       message.delete();
     }
 }
