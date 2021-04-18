@@ -1,5 +1,4 @@
 {
-    "discord.lowerDetailsNoWorkspaceFound": "resting",
-    "discord.removeLowerDetails": true,
-    "npm-intellisense.packageSubfoldersIntellisense": true
+    "npm-intellisense.packageSubfoldersIntellisense": true,
+    "discord.lowerDetailsEditing": "Workspace: Huppy"
 }
