@@ -11,5 +11,10 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord);
 })
 
+const welcome = require('./welcome')
+
+
+welcome(client)
+
 
 client.login(process.env.DISCORD_TOKEN);
