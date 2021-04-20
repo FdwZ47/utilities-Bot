@@ -65,7 +65,7 @@ client.on('message', async (message) => {
                 message.delete();
                 message.member.roles.add(muterole);
                 message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '1h Mute') .addField('**reason**', 'Spamming') .addField('Note', 'if you want to ask about that feel free to DM a stuff member') .setColor('RANDOM'));
+                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '1h Mute') .addField('**reason**', 'Spamming') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM'));
                 setTimeout(() => {
                     message.member.roles.remove(muterole);
                   
