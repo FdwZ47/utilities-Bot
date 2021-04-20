@@ -112,7 +112,7 @@ client.on('message', async (message) => {
             let Tmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Tmuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '1h Mute') .addField('**reason**', 'invite link') .addField('Note', 'if you want to ask about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '1h Mute') .addField('**reason**', 'invite link') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Tmuterole);
                }, MTIME);
@@ -142,7 +142,7 @@ client.on('message', async (message) => {
             let Mmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Mmuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you want to ask about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Mmuterole);
                }, TTIME);
@@ -157,7 +157,7 @@ client.on('message', async (message) => {
             let Smuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Smuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you want to ask about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Smuterole);
                }, STIME);
