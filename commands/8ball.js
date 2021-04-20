@@ -10,7 +10,7 @@ module.exports = {
     const games = new Discord.MessageEmbed()
         .setDescription('You can only use this command in <#796211852920487987>')
         .setColor('#9D6D55')
-        if (message.channel.id !== '796211852920487987') return message.channel.send(games) 
+        if (message.channel.id !== '796211852920487987') return message.channel.send(games).then(msg => msg.delete({timeout: 5000}))
 
     if (!args[0]) return message.channel.send('Please ask a full question!'); // return if no question is commenced
     const replies = ['اي', 'لا <a:srry:825769123686252545>', 'اكيد']; // random responses

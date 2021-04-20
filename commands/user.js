@@ -12,7 +12,7 @@ module.exports = {
       const bot = new Discord.MessageEmbed()
       .setDescription('You can only use this command in <#798664931359719485>')
       .setColor('#9D6D55')
-      if (message.channel.id !== '798664931359719485') return message.channel.send(bot) 
+      if (message.channel.id !== '798664931359719485') return message.channel.send(bot).then(msg => msg.delete({timeout: 5000}))
 
         let userArray = message.content.split(" ");
         let userArgs = userArray.slice(1);
