@@ -43,7 +43,7 @@ client.on('message', async (message) => {
             ++msgCount;
             if (parseInt(msgCount) === WARN) {
                 message.delete();
-                message.reply('<a:bonkcat:833775309933117470> السبام ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({timeout: 4500}))
+                message.reply('<a:animebonk:833775373908443206> السبام ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({timeout: 4500}))
             }
             if (parseInt(msgCount) === LIMIT) {
                 let muterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
