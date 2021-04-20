@@ -19,7 +19,7 @@ const TIME = 3600000; //seconds 1h = 3600
 const DIFF = 4250;//seconds 300 = 5m
 
 client.on('message', async (message) => {
-    if (message.member.hasPermission('ADMINISTRATOR')) return;
+    if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
     if (usersMap.has(message.author.id)) {
         const userData = usersMap.get(message.author.id);
@@ -100,7 +100,7 @@ client.on('message', async (message) => {
  
         const code = message.content.split('discord.gg/')[1];
         if (message.content.includes('discord.gg/')) {
-            if (message.member.hasPermission('ADMINISTRATOR')) return;
+            if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
             const isOurInvite = await isInvite(message.guild, code);
             if(!isOurInvite) {
                 message.delete().catch(error => {
@@ -123,7 +123,7 @@ client.on('message', async (message) => {
         const usersValidURLMap = new Map();
 
        client.on('message', async (message) =>{
-        if (message.member.hasPermission('ADMINISTRATOR')) return;
+        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
         if (message.content.includes('https://')) {
             message.delete();
             message.reply('<a:bonkcat:833775309933117470> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
@@ -167,6 +167,20 @@ client.on('message', async (message) => {
              message.reply('<a:bonkcat:833775309933117470> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
           
          } 
+    })
+
+    client.on('message', async (message) =>{
+
+        if (message.content.startsWith('السلام عليكم')) {
+            message.channel.send(`**و عليكم السلام منور  يا <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
+         
+        } else if (message.content.startsWith('باك')) {
+            message.channel.send(`**ولكم باك منور يا <@${message.author.id}> <a:ENJOY_95:790545328021045268> <a:ENJOY_95:790545328021045268> **`)
+         
+        } else if (message.content.startsWith('برب')) {
+            message.channel.send(`**بالتوفيق يا بعد راسي <@${message.author.id}> عاد لا تطول**<a:ENJOY_183:805837612988104704>`)
+         
+        }
     })
 
        

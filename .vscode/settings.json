@@ -1,7 +1,7 @@
 {
     "npm-intellisense.packageSubfoldersIntellisense": true,
-    "discord.lowerDetailsEditing": "Workspace: huppy",
+    "discord.lowerDetailsEditing": "Workspace: utility",
     "discord.lowerDetailsIdling": "AFK",
-    "discord.removeLowerDetails": true,
-    "discord.detailsIdling": "AFK"
+    "discord.detailsIdling": "AFK",
+    "discord.removeLowerDetails": true
 }
