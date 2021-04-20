@@ -65,7 +65,7 @@ client.on('message', async (message) => {
                 message.delete();
                 message.member.roles.add(muterole);
                 message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '1h Mute') .addField('**reason**', 'Spamming') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM'));
+                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Spamming') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM'));
                 setTimeout(() => {
                     message.member.roles.remove(muterole);
                   
@@ -112,7 +112,7 @@ client.on('message', async (message) => {
             let Tmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Tmuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '1h Mute') .addField('**reason**', 'invite link') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'invite link') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Tmuterole);
                }, MTIME);
@@ -126,15 +126,15 @@ client.on('message', async (message) => {
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
         if (message.content.includes('https://')) {
             message.delete();
-            message.reply('<a:bonkcat:833775309933117470> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
+            message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
           
         } else if (message.content.includes('www.')) {
             message.delete();
-            message.reply('<a:bonkcat:833775309933117470> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
+            message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
           
          } else if (message.content.includes('زق')) {
              message.delete();
-             message.reply('<a:bonkcat:833775309933117470> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
+             message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
           
          } else if (message.content.includes('كس امك')) {
              message.delete();
@@ -142,14 +142,14 @@ client.on('message', async (message) => {
             let Mmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Mmuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Mmuterole);
                }, TTIME);
           
          } else if (message.content.includes('خرا')) {
              message.delete();
-             message.reply('<a:bonkcat:833775309933117470> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
+             message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
           
          } else if (message.content.includes('نيك امك')) {
              message.delete();
@@ -157,14 +157,14 @@ client.on('message', async (message) => {
             let Smuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Smuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> Check your DM For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Smuterole);
                }, STIME);
           
          } else if (message.content.includes('يالكلب')) {
              message.delete();
-             message.reply('<a:bonkcat:833775309933117470> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
+             message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
           
          } 
     })
