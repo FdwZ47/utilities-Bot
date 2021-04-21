@@ -16,7 +16,7 @@ module.exports = {
             .addField('ban', '>ban <@mention> \nAdministrator')
             .addField('kick', '>kick <@menton> \nAdministrator')
             .addField('mute', '>m <@mention> \nMOD \nAdmin')
-            .addField('unmute', '>un <2mention> \nMOD \nAdmin')
+            .addField('unmute', '>un <@mention> \nMOD \nAdmin')
             .addField('setnick', '>set <@mention> <new nick> \nAdmin')
             .addField('resetnik', '>res <@mention> | for:\nAdmin')
             .addField('move', '>move <@mention> \nAdmin')
