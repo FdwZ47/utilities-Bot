@@ -18,7 +18,7 @@ module.exports = {
             .addField('mute', '>m <@mention> \nMOD \nAdmin')
             .addField('unmute', '>un <@mention> \nMOD \nAdmin')
             .addField('setnick', '>set <@mention> <new nick> \nAdmin')
-            .addField('resetnik', '>res <@mention> | for:\nAdmin')
+            .addField('reset nick', '>res <@mention> | for:\nAdmin')
             .addField('move', '>move <@mention> \nAdmin')
             .addField('lock', '>lock \nAdministratorv')
             .addField('unlock', '>unlock \nAdministrator')
