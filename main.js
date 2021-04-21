@@ -122,7 +122,7 @@ client.on('message', async (message) => {
 
 
        client.on('message', async (message) =>{
-        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+      //  if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
      const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'باعوص', 'بعص'];
      for (var i = 0; i < array.length; i++){
