@@ -59,7 +59,7 @@ module.exports = (Discord, client, message) => {
       }
     }
     if (invalidPerms.length) {
-      return message.channel.send(new Discord.MessageEmbed().setDescription(`you don't have permissions to use this command`).setColor('RANDOM')).then(msg => msg.delete({timeout: 3000}));
+      return;// message.channel.send(new Discord.MessageEmbed().setDescription(`you don't have permissions to use this command`).setColor('RANDOM')).then(msg => msg.delete({timeout: 3000}));
     }
   }
 
