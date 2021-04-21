@@ -9,9 +9,9 @@ module.exports = {
 
 
         const moderation = new Discord.MessageEmbed()
-            .setTitle('<:pickaxe:821829362227347526> moderation commands')
-            .setdescription('here is all the moderation commands if you see any issues in the bot DM my developer')
-           // .addField('<:pickaxe:821829362227347526> moderation commands', 'All the commands below is only for Moderators (members have permissions to use the command)')
+           // .setTitle('<:pickaxe:821829362227347526> moderation commands')
+            //.setdescription('here is all the moderation commands if you see any issues in the bot DM my developer')
+            .addField('<:pickaxe:821829362227347526> moderation commands', 'here is all the moderation commands if you see any issues in the bot DM my developer')
             .addField('warn', 'warn 1 = >1 <@mention> | warn 2 = >2 <@mention> | warn 3 = >3 <@mention> | for:\nMOD\nAdmin')
             .addField('ban', '>ban <@mention> \nAdministrator')
             .addField('kick', '>kick <@menton> \nAdministrator')
