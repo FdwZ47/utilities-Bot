@@ -12,6 +12,7 @@ async execute(client, message, args, Discord){
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]) || message.channel
 
         channel.setRateLimitPerUser(args[0])
+        message.delete();
         message.channel.send(new Discord.MessageEmbed() .setDescription(`Slowmode set to **${args[0]}** seconds`) .setColor('#B77C59'))
         return;
 
@@ -22,6 +23,6 @@ async execute(client, message, args, Discord){
         e ? console.error(e) : console.log('Uknown Error')
     })
    
-    message.delete();
+    
 }
 }
