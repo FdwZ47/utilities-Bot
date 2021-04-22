@@ -142,7 +142,7 @@ client.on('message', async (message) => {
              message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
      }
     }
-     const Bad = ['شرموطة', 'نيك امك', 'كس امك', 'كسمك', 'كس امكم', 'كس خواتكم', 'قحاب', 'منايك'];
+     const Bad = ['شرموطة', 'نيك امك', 'كس امك', 'كسمك', 'كس امكم', 'كس خواتكم', 'قحاب', 'منايك', 'انـيـك امـك'];
      for (var i = 0; i < Bad.length; i++){
      if (message.content.includes(Bad[i])) {
         message.delete();
