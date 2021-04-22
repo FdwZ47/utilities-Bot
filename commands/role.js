@@ -28,7 +28,7 @@ module.exports = {
     // message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, +${roleName}`) .setColor('RANDOM'));
 
     if (!member.roles.cache.get(role.id)) {
-        member.roles.remove(role)
+        member.roles.addd(role)
 
     message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, +${roleName}`) .setColor('RANDOM'));
 
