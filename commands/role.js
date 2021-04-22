@@ -26,7 +26,13 @@ module.exports = {
     const member = guild.members.cache.get(targetUser.id)
     member.roles.add(role)
 
-    message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, +${roleName}`) .setColor('#E30B5C'));
+    message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, +${roleName}`) .setColor('RANDOM'));
 
+    if (member.roles.cache.get(role.id)) {
+        member.roles.remove(role)
+
+    message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, -${roleName}`) .setColor('RANDOM'));
+
+      }
     },
 }
