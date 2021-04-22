@@ -12,9 +12,9 @@ module.exports = {
       return
     }
 
-    arguments.shift()
+    args.shift()
 
-    const roleName = arguments.join(' ')
+    const roleName = args.join(' ')
     const { guild } = message
 
     const role = guild.roles.cache.find((role) => {
