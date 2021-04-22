@@ -19,6 +19,7 @@ const TIME = 3600000; //seconds 1h = 3600
 const DIFF = 4255;//seconds 300 = 5m
 
 client.on('message', async (message) => {
+    if (message.channel.type === 'dm') return;
     if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
     if (usersMap.has(message.author.id)) {
@@ -92,6 +93,7 @@ client.on('message', async (message) => {
        const usersinviteMap = new Map();
 
        client.on('message', async (message) =>{
+        if (message.channel.type === 'dm') return;
         const isInvite = (guild, code) => new Promise((resolve) =>{
             guild.fetchInvites().then((invites) => {
                 resolve(invites.some((value) => value[0] === code))
@@ -122,6 +124,7 @@ client.on('message', async (message) => {
 
 
        client.on('message', async (message) =>{
+        if (message.channel.type === 'dm') return;
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
      const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'باعوص', 'بعص', 'قحبة'];
@@ -165,7 +168,7 @@ if (message.content.includes(Bademoji[i])) {
     })
 
     client.on('message', async (message) =>{
-
+        if (message.channel.type === 'dm') return;
         if (message.content.startsWith('السلام عليكم')) {
             message.channel.send(`**و عليكم السلام منور  يا <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
          
