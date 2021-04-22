@@ -124,7 +124,7 @@ client.on('message', async (message) => {
        client.on('message', async (message) =>{
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
-     const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'باعوص', 'بعص'];
+     const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'باعوص', 'بعص', 'قحبة'];
      for (var i = 0; i < array.length; i++){
      if(message.content.includes(array[i])) {
          message.delete();
@@ -143,14 +143,15 @@ client.on('message', async (message) => {
      for (var i = 0; i < Bad.length; i++){
      if (message.content.includes(Bad[i])) {
         message.delete();
-        const TTIME = 1800000;//1800 = 30m 
-            let Mmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
-            message.member.roles.add(Mmuterole);
-               message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> DM me For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 30m Mute') .addField('**reason**', 'Bad words') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
-               setTimeout(() => {
-                   message.member.roles.remove(Mmuterole);
-               }, TTIME);
+        message.member.ban();
+        // const TTIME = 1800000;//1800 = 30m 
+        //     let Mmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
+        //     message.member.roles.add(Mmuterole);
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with ID \`${message.author.id}\``) .setColor('#845B83'));
+                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been Banned from the server') .addField('**action**', '<a:animebonk:833775373908443206> banned') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
+        //        setTimeout(() => {
+        //            message.member.roles.remove(Mmuterole);
+        //        }, TTIME);
 }
      }
    const Bademoji = ['💩', '🖕'];
@@ -182,6 +183,11 @@ if (message.content.includes(Bademoji[i])) {
         
         } else if (message.content.startsWith('**باك**')) {
             message.channel.send(`**ولكم باك منور يا <@${message.author.id}> <a:ENJOY_95:790545328021045268> <a:ENJOY_95:790545328021045268> **`)
+         
+        } else if (message.content.startsWith('زق')) {
+            if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+            message.delete();
+            message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4000}))
          
         }
     })
