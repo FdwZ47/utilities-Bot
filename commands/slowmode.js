@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
     name: 'slowmode',
-    aliases: ['sl', 'مؤقت'],
+    aliases: ['sm', 'مؤقت'],
     permissions: ["MANAGE_CHANNELS"],
     description: 'Sets SlowMode for a Channel',
 async execute(client, message, args, Discord){
@@ -12,7 +12,7 @@ async execute(client, message, args, Discord){
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]) || message.channel
 
         channel.setRateLimitPerUser(args[0])
-        message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> Slow Mode Has successfully set to **${args[0]}**`) .setColor('#E30B5C'))
+        message.channel.send(new Discord.MessageEmbed() .setDescription(`Slowmode set to **${args[0]}** seconds`) .setColor('#B77C59'))
         return;
 
     message.channel.send(new Discord.MessageEmbed() .setDescription(`Slow Mode set to ${args[0]}`) .setColor('RED'))
@@ -21,5 +21,7 @@ async execute(client, message, args, Discord){
         message.channel.send('Error Occured!')
         e ? console.error(e) : console.log('Uknown Error')
     })
+   
+    message.delete();
 }
 }

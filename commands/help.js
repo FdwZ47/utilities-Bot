@@ -25,7 +25,7 @@ module.exports = {
             .addField('hide', '>hi \n Administrator')
             .addField('show', '>sh \nAdministrator')
             .addField('clear', '>c <number> \nAdministrator')
-            .addField('slowmode', '>sl <number> \nAdministrator')
+            .addField('slowmode', '>sm <number> \nAdministrator')
             .setColor('RANDOM')
            // .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/783894bb179b5920aab0bf8b890012b1.png?size=2048')
 

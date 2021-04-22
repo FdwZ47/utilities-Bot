@@ -16,7 +16,7 @@ const usersMap = new Map();
 const WARN = 4;
 const LIMIT = 5;
 const TIME = 3600000; //seconds 1h = 3600
-const DIFF = 4255;//seconds 300 = 5m
+const DIFF = 4555;//seconds 300 = 5m
 
 client.on('message', async (message) => {
     if (message.channel.type === 'dm') return;
@@ -66,7 +66,7 @@ client.on('message', async (message) => {
                 message.delete();
                 message.member.roles.add(muterole);
                 message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> DM me For more information`) .setColor('#845B83'));
-                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Spamming') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM'));
+                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Spamming') .setColor('RANDOM'));
                 setTimeout(() => {
                     message.member.roles.remove(muterole);
                   
@@ -114,7 +114,7 @@ client.on('message', async (message) => {
             let Tmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
             message.member.roles.add(Tmuterole);
                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> DM me For more information`) .setColor('#845B83'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'invite link') .addField('Note', 'if you have a question about that feel free to DM a stuff member') .setColor('RANDOM')).catch(()=> {return});
+               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'invite link') .setColor('RANDOM')).catch(()=> {return});
                setTimeout(() => {
                    message.member.roles.remove(Tmuterole);
                }, MTIME);
@@ -150,7 +150,7 @@ client.on('message', async (message) => {
         // const TTIME = 1800000;//1800 = 30m 
         //     let Mmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
         //     message.member.roles.add(Mmuterole);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with ID \`${message.author.id}\``) .setColor('#845B83'));
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with ID \`${message.author.id}\``) .setColor('#8D6262'));
                 message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been Banned from the server') .addField('**action**', '<a:animebonk:833775373908443206> banned') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
         //        setTimeout(() => {
         //            message.member.roles.remove(Mmuterole);
@@ -194,6 +194,7 @@ if (message.content.includes(Bademoji[i])) {
          
         }
     })
+
 
        
 client.login(process.env.DISCORD_TOKEN);
