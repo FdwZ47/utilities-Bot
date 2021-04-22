@@ -8,7 +8,6 @@ module.exports = {
         
         const targetUser = message.mentions.users.first()
     if (!targetUser) {
-      message.reply('Please specify someone to give a role to.')
       return
     }
 
@@ -21,13 +20,13 @@ module.exports = {
       return role.name === roleName
     })
     if (!role) {
-      message.reply(`There is no role with the name "${roleName}"`)
       return
     }
 
     const member = guild.members.cache.get(targetUser.id)
     member.roles.add(role)
 
-    message.reply(`that user now has the "${roleName}" role`)
+    message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, +${roleName}`) .setColor('#E30B5C'));
+
     },
 }
