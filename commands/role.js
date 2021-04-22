@@ -6,32 +6,28 @@ module.exports = {
     description: "this command give a role to the member!",
     execute(client, message, args, Discord){
         
-         const Target = message.mentions.users.first(); //||
-        // message.guild.members.cache.get(args[0])?.user;
+        const targetUser = message.mentions.users.first()
+    if (!targetUser) {
+      message.reply('Please specify someone to give a role to.')
+      return
+    }
 
-       if(!Target) return;
+    arguments.shift()
 
-       args.shift()
+    const roleName = arguments.join(' ')
+    const { guild } = message
 
-       const rolename = args.join(' ')
-       const guild = message
+    const role = guild.roles.cache.find((role) => {
+      return role.name === roleName
+    })
+    if (!role) {
+      message.reply(`There is no role with the name "${roleName}"`)
+      return
+    }
 
-       const role = guild.roles.cache.find((role) => {
-           return role.name === rolename
-       })
-        const member = guild.members.cache.get(Target.id)
-        if (!member.roles.cache.get(role.id)) {
-            member.roles.add(role)
-            message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${Target.id}>, +${rolename} `) .setColor('RANDOM'));
-        
-        }
-        // member.roles.add(role)
-        // message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${Target.id}>, +${rolename} `) .setColor('RANDOM'));
-        
-        if (member.roles.cache.get(role.id)) {
-            member.roles.remove(role)
-            message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${Target.id}>, -${rolename} `) .setColor('RANDOM'));
-        
-        }
+    const member = guild.members.cache.get(targetUser.id)
+    member.roles.add(role)
+
+    message.reply(`that user now has the "${roleName}" role`)
     },
 }
