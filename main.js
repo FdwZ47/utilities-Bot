@@ -127,7 +127,7 @@ client.on('message', async (message) => {
         if (message.channel.type === 'dm') return;
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
-     const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'باعوص', 'بعص', 'قحبة'];
+     const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'قحبة'];
      for (var i = 0; i < array.length; i++){
      if(message.content.includes(array[i])) {
          message.delete();
@@ -139,10 +139,10 @@ client.on('message', async (message) => {
      for (var i = 0; i < link.length; i++){
      if (message.content.includes(link[i])) {
              message.delete();
-             message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 4500}))
+             message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 3000}))
      }
     }
-     const Bad = ['شرموطة', 'نيك امك', 'كس امك', 'كسمك', 'كس امكم', 'كس خواتكم', 'قحاب', 'منايك', 'انـيـك امـك', '**خواتكم**', 'كـ.ـس...اخــتك'];
+     const Bad = ['شرموطة', 'نيك امك', 'كس امك', 'كسمك', 'كس امكم', 'كس خواتكم', 'قحاب', 'منايك', 'انـيـك امـك', 'كـ.ـس...اخــتك'];
      for (var i = 0; i < Bad.length; i++){
      if (message.content.includes(Bad[i])) {
         message.delete();
@@ -162,6 +162,13 @@ client.on('message', async (message) => {
 if (message.content.includes(Bademoji[i])) {
         message.delete();
         message.reply('<a:animebonk:833775373908443206> هذي الايموجيات ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
+     
+    }
+    const not = ['باعوص', 'بعص', 'تبعص'];
+    for (var i = 0; i < not.length; i++)
+if (message.content.includes(not[i])) {
+        message.delete();
+        message.reply('<a:animebonk:833775373908443206> الكلمات هذي ممنوعة في السيرفر').then(msg => msg.delete({timeout: 4500}))
      
     }
    
