@@ -179,7 +179,7 @@ client.on('message', async (message) => {
      }
     }
   
-    message.channel.awaitMessages(filter, { max: 2, time: 600000, errors: ['time'] }).then(collected => {
+    message.channel.awaitMessages(filter, { max: 2, time: 1800000, errors: ['time'] }).then(collected => {
         for (var i = 0; i < link.length; i++){
             if (message.content.includes('discord.gg/')) return;
         if (message.content.includes(link[i])) {
