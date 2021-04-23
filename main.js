@@ -132,7 +132,7 @@ client.on('message', async (message) => {
         if (message.channel.type === 'dm') return;
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
-     const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'قحبة', 'كلاب', 'Fuke'];
+     const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'قحبة', 'Fuke'];
      for (var i = 0; i < array.length; i++){
      if(message.content.includes(array[i])) {
          message.delete().catch(error => {
