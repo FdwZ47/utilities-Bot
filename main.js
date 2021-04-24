@@ -192,6 +192,17 @@ if (message.content.includes(not[i])) {
      
     }
 
+    const anime = ['ميكاسا بتقطع راس ايرين', '**ميكاسا بتقطع راس ايرين**'];
+   for (var i = 0; i < anime.length; i++)
+if (message.content.includes(anime[i])) {
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
+        message.reply('<a:animebonk:833775373908443206> الحرق ممنوع في السيرفر').then(msg => msg.delete({timeout: 3000}))
+     
+    }
     })
 
     client.on('message', async (message) =>{
