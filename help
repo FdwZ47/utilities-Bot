@@ -149,3 +149,29 @@ module.exports = {
         message.author.send(explain);
     }
 }
+
+
+
+
+
+
+     message.channel.awaitMessages(filter, { max: 2, time: 600000, errors: ['time'] }).then(collected => {
+     for (var i = 0; i < array.length; i++){
+     if(message.content.includes(array[i])) {
+         message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
+        const WTIME = 3600000; 
+    let Wmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
+    message.member.roles.add(Wmuterole);
+       message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> DM me For more information`) .setColor('#E3A781'));
+       message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
+       setTimeout(() => {
+           message.member.roles.remove(Wmuterole);
+       }, WTIME);
+          
+     }
+    } 
+    }).catch(collected => { console.log('time up')});
