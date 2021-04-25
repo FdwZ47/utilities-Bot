@@ -19,7 +19,11 @@ module.exports = {
             user.send(str.replace("-a", ""));
         } else {
             user.send(`${str}`);
-            message.delete();
+            message.delete().catch(error => {
+                if (error.code !== 10008) {
+                    console.error('failed to delete the message', error);
+                }
+            });
         }
     },
 };

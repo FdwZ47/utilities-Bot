@@ -12,7 +12,11 @@ async execute(client, message, args, Discord){
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[1]) || message.channel
 
         channel.setRateLimitPerUser(args[0])
-        message.delete();
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
         message.channel.send(new Discord.MessageEmbed() .setDescription(`Slowmode set to **${args[0]}** seconds`) .setColor('#B77C59'))
         return;
 

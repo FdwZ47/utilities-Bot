@@ -39,6 +39,10 @@ module.exports = {
     message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes:822217053863673856> Changed roles for <@${targetUser.id}>, -${roleName}`) .setColor('RANDOM'));
 
       }
-      message.delete();
+      message.delete().catch(error => {
+        if (error.code !== 10008) {
+            console.error('failed to delete the message', error);
+        }
+    });
     },
 }

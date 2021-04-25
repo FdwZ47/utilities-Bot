@@ -30,7 +30,11 @@ module.exports = {
            // .setFooter('Bot Developer Tanya#0762', 'https://cdn.discordapp.com/avatars/755767643331362916/783894bb179b5920aab0bf8b890012b1.png?size=2048')
 
 
-        message.delete();
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
         message.author.send(moderation);
 
      //   message.channel.send('**Check your DM :mailbox_with_mail:**')

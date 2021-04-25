@@ -33,6 +33,12 @@ module.exports = {
         }// else {
            // message.channel.send('<:idk:822217580567592991> I can not find this member');
         //}
-        message.delete();
+       
+
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
     }
 }

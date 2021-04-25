@@ -237,8 +237,9 @@ if (message.content.includes(anime[i])) {
 
     client.on('message', async (message) =>{
         if (message.channel.id == '796211852920487987') return;
-        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+ //       if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
         if (message.author.bot) return;
+        const amount = 4;
         let filter = msg => {
             return msg.content.toLowerCase() == message.content.toLowerCase() &&
             msg.author.id == message.author.id;
@@ -249,9 +250,19 @@ if (message.content.includes(anime[i])) {
             message.reply('<a:animebonk:833775373908443206> تكرار الرسايل ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({timeout: 3500}))
             }
         }).catch(collected => { console.log('time up')});
+
+        //  const filterby = m => {
+        //     m.author.id == message.author.id;
+        // }
+
 // 180000
         message.channel.awaitMessages(filter, { max: 3, time: 60000, errors: ["time"]}).then(collected => {
             if (message.content.toLowerCase() == message.content.toLowerCase()){
+                message.delete().catch(error => {
+                    if (error.code !== 10008) {
+                        console.error('failed to delete the message', error);
+                    }
+                });
                 const RTIME = 1800000; 
                 let Rmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
                 message.member.roles.add(Rmuterole);

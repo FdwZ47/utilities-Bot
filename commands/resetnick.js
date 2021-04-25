@@ -19,7 +19,11 @@ module.exports = {
         .setColor('#DDFAFF')
 
         message.channel.send(embed)
-        message.delete();
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
 
     }
 }
