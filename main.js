@@ -237,7 +237,7 @@ if (message.content.includes(anime[i])) {
 
     client.on('message', async (message) =>{
         if (message.channel.id == '796211852920487987') return;
- //       if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
         if (message.author.bot) return;
         const amount = 4;
         let filter = msg => {
@@ -251,10 +251,7 @@ if (message.content.includes(anime[i])) {
             }
         }).catch(collected => { console.log('time up')});
 
-        //  const filterby = m => {
-        //     m.author.id == message.author.id;
-        // }
-
+    
 // 180000
         message.channel.awaitMessages(filter, { max: 3, time: 60000, errors: ["time"]}).then(collected => {
             if (message.content.toLowerCase() == message.content.toLowerCase()){
