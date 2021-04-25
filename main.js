@@ -127,7 +127,7 @@ client.on('message', async (message) => {
        client.on('message', async (message) =>{
         if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
-      //  if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
      const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'قحبة', 'Fuke'];
      for (var i = 0; i < array.length; i++){
@@ -181,20 +181,18 @@ client.on('message', async (message) => {
 
      }
 
-
-     try {
-       // const id = ['251164738753527808', '223932746945396737'];
-        var mentionuser = message.mentions.users.first();
-
-        if(mentionuser.id === '251164738753527808', '223932746945396737') {
-
-            message.delete()
-            message.reply('<a:animebonk:833775373908443206> مو مسموح لك تمنشن هذا الشخص في السيرفر').then(msg => msg.delete({timeout: 4250}))
-        }
-
-    } catch(err) {
-
-    }
+//message.delete()
+//message.reply('<a:animebonk:833775373908443206> مو مسموح لك تمنشن هذا الشخص في السيرفر').then(msg => msg.delete({timeout: 4250}))
+     
+    //     const id = ['251164738753527808', '223932746945396737'];
+    //   if(message.content.includes('<@251164738753527808>')){
+    //     message.delete().catch(error => {
+    //         if (error.code !== 10008) {
+    //             console.error('failed to delete the message', error);
+    //         }
+    //     });
+    //     message.reply('<a:animebonk:833775373908443206> مو مسموح لك تمنشن هذا الشخص في السيرفر').then(msg => msg.delete({timeout: 4250}))
+    //   }
 
      
     //  const link = ['https://', '**https://**'];
@@ -331,6 +329,19 @@ if (message.content.includes(anime[i])) {
         }).catch(collected => { console.log('time up')});
     });
 
+
+    // client.on('messageUpdate' , (oldMessage, newMessage) => {
+    //    // const newid = ['251164738753527808', '223932746945396737'];
+    //     if(newMessage.content.includes('<@251164738753527808>')){
+    //         newMessage.delete().catch(error => {
+    //             if (error.code !== 10008) {
+    //                 console.error('failed to delete the message', error);
+    //             }
+    //         });
+    //         newMessage.reply('<a:animebonk:833775373908443206> مو مسموح لك تمنشن هذا الشخص في السيرفر').then(msg => msg.delete({timeout: 4250}))
+          
+    //     }
+    // })
 
 
        
