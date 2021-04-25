@@ -127,7 +127,7 @@ client.on('message', async (message) => {
        client.on('message', async (message) =>{
         if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
-        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+      //  if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
      const array = [' زق', 'يالكلب', 'يلعن', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'poop', 'سحاقية', 'يالكلاب', 'سكس', 'كلتبن', 'كل تبن', 'قحبة', 'Fuke'];
      for (var i = 0; i < array.length; i++){
@@ -141,18 +141,74 @@ client.on('message', async (message) => {
           
      }
     } 
-     const link = ['https://', '**https://**'];
-     for (var i = 0; i < link.length; i++){
-         if (message.content.includes('discord.gg/')) return;
-         if (message.content.includes(link[i])) {
-             message.delete().catch(error => {
-                if (error.code !== 10008) {
-                    console.error('failed to delete the message', error);
-                }
-            });
-             message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 3000}))
+
+    function isValidURL(string) {
+
+        var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+
+        if (message.content.includes('discord.gg/')) return;
+
+        return (res !== null)
+
+
+      };
+
+      var testContent = `${message.content}`;
+
+     if(isValidURL(testContent)) {
+ 
+  
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
+         message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 3000}))
+
      }
+
+     if (message.content.length >= 725) {
+
+
+        message.delete().catch(error => {
+            if (error.code !== 10008) {
+                console.error('failed to delete the message', error);
+            }
+        });
+         message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل رسايل طويلة و مزعجة في الشات هذا').then(msg => msg.delete({timeout: 4250}))
+
+
+
+     }
+
+
+     try {
+       // const id = ['251164738753527808', '223932746945396737'];
+        var mentionuser = message.mentions.users.first();
+
+        if(mentionuser.id === '251164738753527808', '223932746945396737') {
+
+            message.delete()
+            message.reply('<a:animebonk:833775373908443206> مو مسموح لك تمنشن هذا الشخص في السيرفر').then(msg => msg.delete({timeout: 4250}))
+        }
+
+    } catch(err) {
+
     }
+
+     
+    //  const link = ['https://', '**https://**'];
+    //  for (var i = 0; i < link.length; i++){
+    //      if (message.content.includes('discord.gg/')) return;
+    //      if (message.content.includes(link[i])) {
+    //          message.delete().catch(error => {
+    //             if (error.code !== 10008) {
+    //                 console.error('failed to delete the message', error);
+    //             }
+    //         });
+    //          message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا').then(msg => msg.delete({timeout: 3000}))
+    //  }
+    // }
   
      const Bad = ['شرموطة', 'نيك امك', 'كس امك', 'كسمك', 'كس امكم', 'كس خواتكم', 'قحاب', 'منايك', 'انـيـك امـك', 'كـ.ـس...اخــتك', 'ينيك'];
      for (var i = 0; i < Bad.length; i++){
@@ -232,6 +288,9 @@ if (message.content.includes(anime[i])) {
             message.delete();
             message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 3000}))
          
+        } else if (message.content.startsWith('سلام عليكم')) {
+            message.channel.send(`**و عليكم السلام منور  يا <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
+        
         }
     })
 
@@ -271,7 +330,6 @@ if (message.content.includes(anime[i])) {
             }
         }).catch(collected => { console.log('time up')});
     });
-
 
 
 
