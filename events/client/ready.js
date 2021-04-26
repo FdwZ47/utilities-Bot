@@ -19,9 +19,11 @@ module.exports = (Discord, client) =>{
 
     let main = 0;
     setInterval(() => {
-    if (main === arrayOfpresence.length) main = 0;
-    const presence = arrayOfpresence[main];
-    console.log(presence)
+        
+        if (main === arrayOfpresence.length) main = 0;
+        const presence = arrayOfpresence[main];
+        console.log(presence)
+    
 
     if (main === arrayOfstatus.length) main = 0;
     const Status = arrayOfstatus[main];
