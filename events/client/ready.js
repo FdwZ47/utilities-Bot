@@ -6,23 +6,25 @@ module.exports = (Discord, client) =>{
         'everyone',
         'People in Australia',
         'commands',
-        'Minecraft',
+        'channels',
+        'YouTube',
+        'People in Canada',
         ];
 
-    const arrayOfpresence = [
-        'watching',
-        'watching',
-        'watching',
-        'listening',
-        'streaming',
-    ];
+    // const arrayOfpresence = [
+    //     'watching',
+    //     'watching',
+    //     'watching',
+    //     'listening',
+    //     'streaming',
+    // ];
 
     let main = 0;
     setInterval(() => {
         
-        if (main === arrayOfpresence.length) main = 0;
-        const presence = arrayOfpresence[main];
-        console.log(presence)
+        // if (main === arrayOfpresence.length) main = 0;
+        // const presence = arrayOfpresence[main];
+        // console.log(presence)
     
 
     if (main === arrayOfstatus.length) main = 0;
@@ -30,7 +32,7 @@ module.exports = (Discord, client) =>{
     console.log(Status);
 
 
-    client.user.setActivity(Status, { type: presence }).catch(error => console.log(error));
+    client.user.setActivity(Status, { type: 'WATCHING' }).catch(error => console.log(error));
     main++;
     }, 10000)
 
