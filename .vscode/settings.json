@@ -1,6 +1,6 @@
 {
     "npm-intellisense.packageSubfoldersIntellisense": true,
-    "discord.lowerDetailsEditing": "Workspace: utility",
-    "discord.removeLowerDetails": true,
-    "discord.largeImageIdling": "AFK"
+    "discord.lowerDetailsEditing": "Workspace: rewrite-testing",
+    "discord.largeImageIdling": "AFK",
+    "discord.detailsEditing": "editing a {lang} file"
 }

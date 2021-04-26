@@ -141,9 +141,9 @@ client.on('message', async (message) => {
           
      }
     } 
-
+// EMBED_LINKS
     function isValidURL(string) {
-
+        if (message.member && message.member.hasPermission('EMBED_LINKS')) return;
         var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
 
         if (message.content.includes('discord.gg/')) return;
