@@ -67,8 +67,8 @@ client.on('message', async (message) => {
                 }
                 message.delete();
                 message.member.roles.add(muterole);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with id \`${message.author.id}\``) .setColor('#E3A781'));
-                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Spamming') .setColor('RANDOM'));
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``) .setColor('#E3A781'));
+                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h mute') .addField('**reason**', 'Spamming') .setColor('RANDOM'));
                 setTimeout(() => {
                     message.member.roles.remove(muterole);
                   
@@ -129,7 +129,7 @@ client.on('message', async (message) => {
        client.on('message', async (message) =>{
         if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
-        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+       if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;
      const array = [' زق', 'يالكلب', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'سحاقية', 'يالكلاب', 'كلتبن', 'كل تبن', 'قحبة', 'Fuke', 'ز.ق'];
      for (var i = 0; i < array.length; i++){
