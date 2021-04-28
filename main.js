@@ -833,7 +833,7 @@ if (message.content.includes(anime[i])) {
            message.member.ban();
         
    
-                   message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with ID \`${message.author.id}\``) .setColor('#64657C'));
+                   message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with id \`${message.author.id}\``) .setColor('#64657C'));
                    message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been Banned from the server') .addField('**action**', '<a:animebonk:833775373908443206> banned') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
       
    
@@ -849,5 +849,3 @@ if (message.content.includes(anime[i])) {
        
 client.login(process.env.DISCORD_TOKEN);
 
-
-// \n<@${message.author.id}> DM me For more information
