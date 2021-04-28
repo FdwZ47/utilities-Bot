@@ -21,6 +21,8 @@ const TIME = 3600000; //seconds 1h = 3600
 const DIFF = 4555;//seconds 300 = 5m
 
 client.on('message', async (message) => {
+    if (message.channel.id == '796211852920487987') return;
+    if (message.channel.id == '811248797669392385') return;
     if (message.channel.type === 'dm') return;
     if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
     if (message.author.bot) return;

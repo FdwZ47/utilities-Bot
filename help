@@ -1,71 +1,69 @@
-//const pagination = require('discord.js-pagination');
-const Discord = require('discord.js');
+/* // //const pagination = require('discord.js-pagination');
+// const Discord = require('discord.js');
 
-module.exports = {
-    name: 'help',
-    aliases: ['helpme'],
-    permissions: ["USE_EXTERNAL_EMOJIS"],
-    description: "this command give you all the bot commands",
-    execute(client, message, args, Discord) {
+// module.exports = {
+//     name: 'help',
+//     aliases: ['helpme'],
+//     permissions: ["USE_EXTERNAL_EMOJIS"],
+//     description: "this command give you all the bot commands",
+//     execute(client, message, args, Discord) {
 
-        const info = new Discord.MessageEmbed()
-        .setTitle('information')
-        .addField('**prefix**', 'Bot prefix = `>`')
-        .addField('**pages in this message**', '1-moderation cmds 2-misc 3-explain')
-        .addField('**note**', 'use The arrows to look through The pages')
-        .addfoter('Bot developer Tanya#0672')
+//         const info = new Discord.MessageEmbed()
+//         .setTitle('information')
+//         .addField('**prefix**', 'Bot prefix = `>`')
+//         .addField('**pages in this message**', '1-moderation cmds 2-misc 3-explain')
+//         .addField('**note**', 'use The arrows to look through The pages')
+//         .addfoter('Bot developer Tanya#0672')
 
-        const moderation = new Discord.MessageEmbed()
-        .setTitle('moderation cmds')
-        .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
-        .addField('ban', 'this banned the member')
-        .addField('kick', 'this kick the member from the server')
-        .addField('mute', 'this mute the member')
-        .addField('unmute', 'this remove the mute from muted member')
-        .addField('setnick', 'this command change the member nickname')
-        .addField('move', 'this move the member to your voice channel')
-        .addField('lock', 'this lock the text channel')
-        .addField('unlock', 'this unlock the text channel')
-        .addField('hide', 'this hide the channel so no one can see it')
-        .addField('show', 'this show the channel so everyone can see it')
-        .addField('clear', 'this delete the messages in text channel')
+//         const moderation = new Discord.MessageEmbed()
+//         .setTitle('moderation cmds')
+//         .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
+//         .addField('ban', 'this banned the member')
+//         .addField('kick', 'this kick the member from the server')
+//         .addField('mute', 'this mute the member')
+//         .addField('unmute', 'this remove the mute from muted member')
+//         .addField('setnick', 'this command change the member nickname')
+//         .addField('move', 'this move the member to your voice channel')
+//         .addField('lock', 'this lock the text channel')
+//         .addField('unlock', 'this unlock the text channel')
+//         .addField('hide', 'this hide the channel so no one can see it')
+//         .addField('show', 'this show the channel so everyone can see it')
+//         .addField('clear', 'this delete the messages in text channel')
 
-        const misc = new Discord.MessageEmbed()
-        .setTitle('Misc cmds')
-        .setDescription('All the commands Below everyone can use it')
-        .addField('user', 'this command show you the join date & account craete date')
-        .addField('avatar', 'this send your avatar or others avatar')
+//         const misc = new Discord.MessageEmbed()
+//         .setTitle('Misc cmds')
+//         .setDescription('All the commands Below everyone can use it')
+//         .addField('user', 'this command show you the join date & account craete date')
+//         .addField('avatar', 'this send your avatar or others avatar')
 
-        const explain = new Discord.MessageEmbed()
-        .setTitle('commands info')
-        .description('here is all the commands aliases & useage & permissios')
-        .addField('**ban**', 'How to use: `>ban @mention`', 'aliases: b | باند', 'permissions: `BAN_MEMBERS`')
-        .addField('**kick**', 'How to use `>kick @mention`', 'aliases: k', 'permissions: `KICK_MEMBERS`')
-        .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want', 'aliases: m | اص', 'permissions: `MOVE_MEMBERS`')
-        .addField('**unmute**', 'How to use: `>unmute @mention`', 'aliases: un | تكلم', 'permissions: `MOVE_MEMBERS`')
-        .addField('**unmute**', 'How to use: `>unmute @mention`', 'aliases: un | تكلم', 'permissions: `MOVE_MEMBERS`')
-        .addField('**setnick**', 'How to use: `>setnick @mention new nickname`', 'aliases: set | nick', 'permissions: `MANAGE_NICKNAMES`')
-        .addField('**move**', 'How to use: `>move @mention`', 'aliases: ve | سحب', 'permissions: `MOVE_MEMBERS`')
-        .addField('**lock**', 'How to use: `>lock`', 'aliases: close | قفل', 'permissions: `MANAGE_CHANNELS`')
-        .addField('**unlock**', 'How to use: `>unlock`', 'aliases: open | فتح', 'permissions: `MANAGE_CHANNELS`')
-        .addField('**hide**', 'How to use: `>hide`', 'aliases: hi', 'permissions: `MANAGE_CHANNELS`')
-        .addField('**show**', 'How to use: `>show`', 'aliases: sh', 'permissions: `MANAGE_CHANNELS`')
-        .addField('**clear**', 'How to use: `>clear (number)`', 'aliases: cl | مسح', 'permissions: `MANAGE_MESSAGES`')
-        .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention`', 'aliases: v | pfp | صور', 'permissions: `none`')
-        .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo ', 'aliases: u', 'permissions: `none`')
+//         const explain = new Discord.MessageEmbed()
+//         .setTitle('commands info')
+//         .description('here is all the commands aliases & useage & permissios')
+//         .addField('**ban**', 'How to use: `>ban @mention`', 'aliases: b | باند', 'permissions: `BAN_MEMBERS`')
+//         .addField('**kick**', 'How to use `>kick @mention`', 'aliases: k', 'permissions: `KICK_MEMBERS`')
+//         .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want', 'aliases: m | اص', 'permissions: `MOVE_MEMBERS`')
+//         .addField('**unmute**', 'How to use: `>unmute @mention`', 'aliases: un | تكلم', 'permissions: `MOVE_MEMBERS`')
+//         .addField('**unmute**', 'How to use: `>unmute @mention`', 'aliases: un | تكلم', 'permissions: `MOVE_MEMBERS`')
+//         .addField('**setnick**', 'How to use: `>setnick @mention new nickname`', 'aliases: set | nick', 'permissions: `MANAGE_NICKNAMES`')
+//         .addField('**move**', 'How to use: `>move @mention`', 'aliases: ve | سحب', 'permissions: `MOVE_MEMBERS`')
+//         .addField('**lock**', 'How to use: `>lock`', 'aliases: close | قفل', 'permissions: `MANAGE_CHANNELS`')
+//         .addField('**unlock**', 'How to use: `>unlock`', 'aliases: open | فتح', 'permissions: `MANAGE_CHANNELS`')
+//         .addField('**hide**', 'How to use: `>hide`', 'aliases: hi', 'permissions: `MANAGE_CHANNELS`')
+//         .addField('**show**', 'How to use: `>show`', 'aliases: sh', 'permissions: `MANAGE_CHANNELS`')
+//         .addField('**clear**', 'How to use: `>clear (number)`', 'aliases: cl | مسح', 'permissions: `MANAGE_MESSAGES`')
+//         .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention`', 'aliases: v | pfp | صور', 'permissions: `none`')
+//         .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo ', 'aliases: u', 'permissions: `none`')
 
-        const pages = [
-            info,
-            moderation,
-            misc,
-            explain,
-        ]
+//         const pages = [
+//             info,
+//             moderation,
+//             misc,
+//             explain,
+//         ]
 
-        const emojilist = ["""<:that:821783004279734282> "]
-    }
-}
-
-
+//         const emojilist = ["""<:that:821783004279734282> "]
+//     }
+// }
 
 
 
@@ -78,7 +76,9 @@ module.exports = {
 
 
 
-====================================================================================
+
+
+// ====================================================================================
 
 
 
@@ -88,90 +88,89 @@ module.exports = {
 
 
 
-const Discord = require('discord.js');
+// const Discord = require('discord.js');
 
-module.exports = {
-    name: 'help',
-    aliases: ['helpme'],
-    permissions: ["USE_EXTERNAL_EMOJIS"],
-    description: "this command give you all the bot commands",
-    execute(client, message, args, Discord) {
+// module.exports = {
+//     name: 'help',
+//     aliases: ['helpme'],
+//     permissions: ["USE_EXTERNAL_EMOJIS"],
+//     description: "this command give you all the bot commands",
+//     execute(client, message, args, Discord) {
 
-        const info = new Discord.MessageEmbed()
-        .setTitle('information')
-        .addField('**prefix**', 'Bot prefix = `>`')
-        .addField('**pages**', '1-moderation 2-misc 3-explain')
+//         const info = new Discord.MessageEmbed()
+//         .setTitle('information')
+//         .addField('**prefix**', 'Bot prefix = `>`')
+//         .addField('**pages**', '1-moderation 2-misc 3-explain')
 
-        const moderation = new Discord.MessageEmbed()
-        .setTitle('moderation cmds')
-        .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
-        .addField('ban', 'this banned the member')
-        .addField('kick', 'this kick the member from the server')
-        .addField('mute', 'this mute the member')
-        .addField('unmute', 'this remove the mute from muted member')
-        .addField('setnick', 'this command change the member nickname')
-        .addField('move', 'this move the member to your voice channel')
-        .addField('lock', 'this lock the text channel')
-        .addField('unlock', 'this unlock the text channel')
-        .addField('hide', 'this hide the channel so no one can see it')
-        .addField('show', 'this show the channel so everyone can see it')
-        .addField('clear', 'this delete the messages in text channel')
+//         const moderation = new Discord.MessageEmbed()
+//         .setTitle('moderation cmds')
+//         .setDescription('All the commands below is only for Moderators (members have permissions to use the command)')
+//         .addField('ban', 'this banned the member')
+//         .addField('kick', 'this kick the member from the server')
+//         .addField('mute', 'this mute the member')
+//         .addField('unmute', 'this remove the mute from muted member')
+//         .addField('setnick', 'this command change the member nickname')
+//         .addField('move', 'this move the member to your voice channel')
+//         .addField('lock', 'this lock the text channel')
+//         .addField('unlock', 'this unlock the text channel')
+//         .addField('hide', 'this hide the channel so no one can see it')
+//         .addField('show', 'this show the channel so everyone can see it')
+//         .addField('clear', 'this delete the messages in text channel')
 
-        const misc = new Discord.MessageEmbed()
-        .setTitle('Misc cmds')
-        .setDescription('All the commands Below everyone can use it')
-        .addField('user', 'this command show you the join date & account craete date')
-        .addField('avatar', 'this send your avatar or others avatar')
-
-
-        const explain = new Discord.MessageEmbed()
-        .setTitle('commands info')
-        .setDescription('here is all the commands aliases & useage & permissios')
-        .addField('**ban**', 'How to use: `>ban @mention` | aliases: b | باند | permissions: `BAN_MEMBERS`')
-        .addField('**kick**', 'How to use `>kick @mention` | aliases: k | permissions: `KICK_MEMBERS`')
-        .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m | اص | permissions: `MOVE_MEMBERS`')
-        .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
-        .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
-        .addField('**setnick**', 'How to use: `>setnick @mention new nickname` | aliases: set | nick | permissions: `MANAGE_NICKNAMES`')
-        .addField('**move**', 'How to use: `>move @mention` | aliases: ve | سحب | permissions: `MOVE_MEMBERS`')
-        .addField('**lock**', 'How to use: `>lock` | aliases: close | قفل | permissions: `MANAGE_CHANNELS`')
-        .addField('**unlock**', 'How to use: `>unlock` | aliases: open | فتح | permissions: `MANAGE_CHANNELS`')
-        .addField('**hide**', 'How to use: `>hide`', 'aliases: hi | permissions: `MANAGE_CHANNELS`')
-        .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `MANAGE_CHANNELS`')
-        .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl | مسح | permissions: `MANAGE_MESSAGES`')
-        .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور | permissions: `none`')
-        .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u | permissions: `none`')
+//         const misc = new Discord.MessageEmbed()
+//         .setTitle('Misc cmds')
+//         .setDescription('All the commands Below everyone can use it')
+//         .addField('user', 'this command show you the join date & account craete date')
+//         .addField('avatar', 'this send your avatar or others avatar')
 
 
-        message.author.send(info);
-        message.author.send(moderation);
-        message.author.send(misc);
-        message.author.send(explain);
-    }
-}
+//         const explain = new Discord.MessageEmbed()
+//         .setTitle('commands info')
+//         .setDescription('here is all the commands aliases & useage & permissios')
+//         .addField('**ban**', 'How to use: `>ban @mention` | aliases: b | باند | permissions: `BAN_MEMBERS`')
+//         .addField('**kick**', 'How to use `>kick @mention` | aliases: k | permissions: `KICK_MEMBERS`')
+//         .addField('**mute**', 'How to use: `>mute @mention` and you can put a timer if you want | aliases: m | اص | permissions: `MOVE_MEMBERS`')
+//         .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
+//         .addField('**unmute**', 'How to use: `>unmute @mention` | aliases: un | تكلم | permissions: `MOVE_MEMBERS`')
+//         .addField('**setnick**', 'How to use: `>setnick @mention new nickname` | aliases: set | nick | permissions: `MANAGE_NICKNAMES`')
+//         .addField('**move**', 'How to use: `>move @mention` | aliases: ve | سحب | permissions: `MOVE_MEMBERS`')
+//         .addField('**lock**', 'How to use: `>lock` | aliases: close | قفل | permissions: `MANAGE_CHANNELS`')
+//         .addField('**unlock**', 'How to use: `>unlock` | aliases: open | فتح | permissions: `MANAGE_CHANNELS`')
+//         .addField('**hide**', 'How to use: `>hide`', 'aliases: hi | permissions: `MANAGE_CHANNELS`')
+//         .addField('**show**', 'How to use: `>show` | aliases: sh | permissions: `MANAGE_CHANNELS`')
+//         .addField('**clear**', 'How to use: `>clear (number)` | aliases: cl | مسح | permissions: `MANAGE_MESSAGES`')
+//         .addField('**avatar**', 'How to use: `>avatar @mention` and if you want your avatar just write the command without `@mention` | aliases: v | pfp | صور | permissions: `none`')
+//         .addField('**user**', 'How to use: `>user @mention` write it without `@mention` to show your userinfo | aliases: u | permissions: `none`')
 
 
+//         message.author.send(info);
+//         message.author.send(moderation);
+//         message.author.send(misc);
+//         message.author.send(explain);
+//     }
+// }
 
 
 
 
-     message.channel.awaitMessages(filter, { max: 2, time: 600000, errors: ['time'] }).then(collected => {
-     for (var i = 0; i < array.length; i++){
-     if(message.content.includes(array[i])) {
-         message.delete().catch(error => {
-            if (error.code !== 10008) {
-                console.error('failed to delete the message', error);
-            }
-        });
-        const WTIME = 3600000; 
-    let Wmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
-    message.member.roles.add(Wmuterole);
-       message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> DM me For more information`) .setColor('#E3A781'));
-       message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
-       setTimeout(() => {
-           message.member.roles.remove(Wmuterole);
-       }, WTIME);
+//      message.channel.awaitMessages(filter, { max: 2, time: 600000, errors: ['time'] }).then(collected => {
+//      for (var i = 0; i < array.length; i++){
+//      if(message.content.includes(array[i])) {
+//          message.delete().catch(error => {
+//             if (error.code !== 10008) {
+/* //                 console.error('failed to delete the message', error);
+//             }
+//         });
+//         const WTIME = 3600000; 
+/* //     let Wmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
+/* //     message.member.roles.add(Wmuterole); */
+/* //        message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Muted** **|** with ID \`${message.author.id}\`\n<@${message.author.id}> DM me For more information`) .setColor('#E3A781'));
+//        message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
+//        setTimeout(() => {
+//            message.member.roles.remove(Wmuterole);
+//        }, WTIME);
           
-     }
-    } 
-    }).catch(collected => { console.log('time up')});
+//      }
+//     } 
+//     }).catch(collected => { console.log('time up')}); */
+
