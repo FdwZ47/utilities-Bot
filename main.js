@@ -819,29 +819,29 @@ if (message.content.includes(anime[i])) {
 
    
 
-    client.on('message', async (message) =>{
+//     client.on('message', async (message) =>{
 
-        const Bad = ['شرموطة', 'نيك امك', 'كس امك', 'كسمك', 'كس امكم', 'كس خواتكم', 'قحاب', 'منايك', 'انـيـك امـك', 'كـ.ـس...اخــتك', 'ينيك'];
+//         const Bad = [' نيك امك', 'كس امك', 'كس امكم', 'كس خواتكم', 'انـيـك امـك', 'كـ.ـس...اخــتك', 'ينيك امك', 'ينيك اختك '];
 
 
-        for (var i = 0; i < Bad.length; i++){
+//         for (var i = 0; i < Bad.length; i++){
    
    
-        if (message.content.includes(Bad[i])) {
+//         if (message.content.includes(Bad[i])) {
    
-           message.delete();
-           message.member.ban();
+//            message.delete();
+//            message.member.ban();
         
    
-                   message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with id \`${message.author.id}\``) .setColor('#64657C'));
-                   message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been Banned from the server') .addField('**action**', '<a:animebonk:833775373908443206> banned') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
+//                    message.channel.send(new Discord.MessageEmbed() .setDescription(`<a:yes_1:823243336664088616> <@${message.author.id}> has been **Banned** **|** with id \`${message.author.id}\``) .setColor('#64657C'));
+//                    message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been Banned from the server') .addField('**action**', '<a:animebonk:833775373908443206> banned') .addField('**reason**', 'Bad words') .setColor('RANDOM')).catch(()=> {return});
       
    
-   }
+//    }
    
    
-        }
-    })
+//         }
+//     })
 
 
 
