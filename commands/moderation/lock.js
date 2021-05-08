@@ -8,11 +8,13 @@ module.exports = {
 
        // let msg = await message.channel.send("<:gears:819943211530977350> just a second")
 
+       const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.channel
+
         try {
-            message.channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == '@everyone'), {
+            channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == '@everyone'), {
                 SEND_MESSAGES: false,
             })
-            message.channel.send('<a:yes_1:823243336664088616> channel has been locked')
+            message.channel.send(`:closed_lock_with_key: ${channel} has been Locked`)
     
         }catch(e) {
             console.log(e)
