@@ -6,25 +6,27 @@ module.exports = {
     permissions: ["MUTE_MEMBERS"],
     description: "this mutes a member!",
     execute(client, message, args, Discord) {
-        
+
         const target = message.mentions.users.first() ||
         message.guild.members.cache.get(args[0])?.user;
 
         if (target) {
             let mainRole = message.guild.roles.cache.find(role => role.name === 'tester');
             let muteRole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
-        
+      
+           
+
 
             let memberTarget = message.guild.members.cache.get(target.id);
 
             if (!args[1]) {
                 memberTarget.roles.add(muteRole.id);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> <@${memberTarget.user.id}> has been **muted**`) .setColor('#93BFE6'));
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> <@${memberTarget.user.id}> has been **muted** **|** ${memberTarget.user.id}`) .setColor('#93BFE6'));
                 message.delete();
                 return
             }
             memberTarget.roles.add(muteRole.id);
-            message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> <@${memberTarget.user.id}> has been muted for **${ms(ms(args[1]))}**`) .setColor('#93BFE6'));
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${memberTarget.user.id}> has been muted for **${ms(ms(args[1]))}**`) .setColor('#93BFE6'));
             message.delete();
             setTimeout(function () {
                 memberTarget.roles.remove(muteRole.id);
@@ -38,5 +40,7 @@ module.exports = {
             console.error('failed to delete the message', error);
         }
     });
+
+
     }
 }

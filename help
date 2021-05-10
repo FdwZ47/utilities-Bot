@@ -575,15 +575,10 @@ if (message.content.includes(anime[i])) {
    return;
        }
 
-
+continuous
 
     })
-
-
-
-
-
-
+ewrite testing
 
 
 
