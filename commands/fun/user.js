@@ -27,18 +27,25 @@ module.exports = {
         let y = Date.now() - message.guild.members.cache.get(member.id).joinedAt;
         const joined = Math.floor(y / 86400000);
 
-        const joineddate = moment.utc(member.joinedAt).format("MMMM Do YYYY");
+        const joineddate = moment.utc(member.joinedAt).format('L');
         let status = member.presence.status;
 
         const userEmbed = new Discord.MessageEmbed()
-        .setAuthor(member.user.tag, member.user.displayAvatarURL())
-        .setColor('#0097FF')
-        .addField("Member ID", member.id)
+        .setAuthor(member.user.tag)
+        .setThumbnail(member.user.displayAvatarURL({ dynamic: true}))
+        .setColor(member.displayHexColor)
+       // .addField("Member ID", member.id)
         //.addField('Roles', `<@&${member._roles.join('> <@&')}>`)
-        .addField("<:blue_point:821782715925921794> Account Created On:", ` ${moment.utc(member.user.createdAt).format("MMMM Do YYYY")}`, true)
-        .addField('<:blue_point:821782715925921794> Joined the server At:', `${joineddate} \n> Before **${joined}** day's Ago`) 
-      //  .setFooter('Developer Tanya#0762', 'https://media.discordapp.net/attachments/827127242005020702/828506152005926952/94970e47ebef1e067ba91b37694eeb36.gif')
+        .addField("Account Created On:", `\`${moment.utc(member.user.createdAt).format('L')}\``, true)
+        .addField('Joined At:', `\`${joineddate}\``) 
+        .addField('avatar URL:', `[link](${member.user.displayAvatarURL()})`)
+      //  .addField('ID:', `${member.id}`, false)
+        //.setFooter(`ID: ${member.id}`, '\n200b')
 
         message.channel.send(userEmbed);
     }
 }
+// "MMMM Do YYYY"
+// "MMMM Do YYYY"
+// member.user.displayAvatarURL()
+// \n> Before **${joined}** day's Ago

@@ -45,7 +45,7 @@ module.exports = (client) => {
      
              if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
              var mutedEm = new Discord.MessageEmbed()
-             .setDescription(`<@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``)
+             .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
              .setColor('#E3A781')
              message.channel.send(mutedEm)
      
@@ -116,7 +116,7 @@ if (message.content.includes(Bademoji[i])) {
 
         if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
         var mutedEm = new Discord.MessageEmbed()
-        .setDescription(`<@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``)
+        .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
         .setColor('#E3A781')
         message.channel.send(mutedEm)
 
@@ -200,7 +200,7 @@ if (message.content.includes(Bademoji[i])) {
         
                 if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
                 var mutedEm = new Discord.MessageEmbed()
-                .setDescription(`<@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``)
+                .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
                 .setColor('#E3A781')
                 message.channel.send(mutedEm)
         
@@ -269,7 +269,7 @@ if (message.content.includes(Bademoji[i])) {
          
                  if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
                  var mutedEm = new Discord.MessageEmbed()
-                 .setDescription(`<@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``)
+                 .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
                  .setColor('#E3A781')
                  message.channel.send(mutedEm)
          
@@ -340,7 +340,7 @@ if (message.content.includes(Bademoji[i])) {
          
                  if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
                  var mutedEm = new Discord.MessageEmbed()
-                 .setDescription(`<@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``)
+                 .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
                  .setColor('#E3A781')
                  message.channel.send(mutedEm)
          
@@ -411,7 +411,7 @@ if (message.content.includes(Bademoji[i])) {
        
                if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
                var mutedEm = new Discord.MessageEmbed()
-               .setDescription(`<@${message.author.id}> has been **muted** **|** with id \`${message.author.id}\``)
+               .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
                .setColor('#E3A781')
                message.channel.send(mutedEm)
        
@@ -464,6 +464,79 @@ if (message.content.includes(Bademoji[i])) {
         }
 
 
+ 
+            const emoji = message.content.match(/<:.+?:\d+>/g)
+        
+    
+
+        if (emoji !== null && emoji.length >= 6){
+            message.delete().catch(error => {
+    
+    
+                if (error.code !== 10008) {
+                    console.error('failed to delete the message', error);
+                }
+            });
+
+
+            message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل ايموجيات كثير بنفس الرسالة, تكمل تاخذ ميوت').then(msg => msg.delete({timeout: 4000}))
+
+
+            var warnsJSON = JSON.parse(Fs.readFileSync('./warnInfo.json'))
+               
+    
+            if(!warnsJSON[message.author.id]) {
+                warnsJSON[message.author.id] = {
+                    warns: 0
+                }
+        
+                Fs.writeFileSync('./warnInfo.json' , JSON.stringify(warnsJSON))
+            }
+        
+            warnsJSON[message.author.id].warns += 1
+            Fs.writeFileSync('./warnInfo.json' , JSON.stringify(warnsJSON))
+        
+        
+            setTimeout(function() {
+        
+                warnsJSON[message.author.id].warns -= 1
+                Fs.writeFileSync('./warnInfo.json' , JSON.stringify(warnsJSON))
+            }, ms('30m'))
+        
+        
+                if(Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
+                var mutedEm = new Discord.MessageEmbed()
+                .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
+                .setColor('#E3A781')
+                message.channel.send(mutedEm)
+        
+                const muteRole = message.guild.roles.cache.find(r => r.name === 'T!MUTED')
+                const user = message.member
+                user.roles.add(muteRole.id)
+        
+                var yougotmuted = new Discord.MessageEmbed()
+                .setTitle('**moderation mail**') 
+                .setDescription('you have been muted for continuous **|** so you cant send messages in the server') 
+                .addField('**action**', '<a:animebonk:833775373908443206> 30m Mute') 
+                .addField('**reason**', 'mass emojis') 
+                .setColor('RANDOM')
+        
+                try {
+        
+                    message.author.send(yougotmuted).then(msg => msg.delete({timeout: 1800000}))
+        
+                }catch(err) {
+        
+                }
+        
+                setTimeout(function () {
+                    user.roles.remove(muteRole.id)
+                }, ms('30m'));
+        
+            }
+            return;
+         }
+        
 
     });
 }

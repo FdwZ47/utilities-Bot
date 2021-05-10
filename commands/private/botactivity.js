@@ -5,7 +5,7 @@ module.exports = {
     permissions: [],
     description: "this command change the bot activity",
     execute(client, message, args, Discord){
-        if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setTitle('<:NO:828567406347419669> For developer') .setDescription('only my developer can run this command') .setColor('#9542FF'));
+        if(message.author.id != 755767643331362916) return message.channel.send(new Discord.MessageEmbed() .setDescription('only my developer can run this command') .setColor('#9542FF')).then(msg => msg.delete({timeout: 5000}))
         //here you tell the bot to choose the kind of activity
 if (args[0] === "playing"){
     types = 0

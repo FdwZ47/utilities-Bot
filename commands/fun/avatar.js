@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'avatar',
-    aliases: ['pfp', 'صور', 'v'],
+    aliases: ['pfp', 'صور', 'v', 'av'],
     permissions: ["USE_EXTERNAL_EMOJIS"],
     description: "this command give you your avatar(profile icon)",
     execute(client, message, args, Discord) {
@@ -17,7 +17,7 @@ module.exports = {
             const user = message.mentions.users.first() ||
             message.guild.members.cache.get(args[0])?.user;
             
-            if (!user) return message.channel.send(new Discord.MessageEmbed() .setDescription('Please make sure to specific a user and make sure he is the server') .setColor('RED'));
+            if (!user) return; //message.channel.send(new Discord.MessageEmbed() .setDescription('Please make sure to specific a user and make sure he is the server') .setColor('RED'));
 
 
             return message.channel.send(new Discord.MessageEmbed() .setTitle(`${user.username}'s avatar`) .setDescription(`[Avatar link](${user.avatarURL()})`) .setImage(user.displayAvatarURL({ dynamic: true, size: 2048 })) .setColor('#8FA0EA'));
