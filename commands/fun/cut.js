@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 module.exports = {
   name: 'كت',
-  aliases: ['ك'],
+  aliases: ['ك', 'e'],
   permissions: ["SEND_TTS_MESSAGES"],
   description: 'cut command',
   async execute(client, message, args, Discord) {
