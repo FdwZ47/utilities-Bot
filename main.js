@@ -14,12 +14,12 @@ const commandFolders = Fs.readdirSync('./commands');
 
 
 for (const folder of commandFolders) {
-   const commandFiles = Fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+    const commandFiles = Fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
     for (const file of commandFiles) {
-       const command = require(`./commands/${folder}/${file}`);
-       client.commands.set(command.name, command);
+        const command = require(`./commands/${folder}/${file}`);
+        client.commands.set(command.name, command);
     }
-}   
+}
 
 ['command_handler', 'event_handler'].forEach(handler => {
     require(`./handlers/${handler}`)(client, Discord);
@@ -31,7 +31,7 @@ autoMod(client);
 const usersMap = new Map();
 const WARN = 4;
 const LIMIT = 5;
-const TIME = 3600000; 
+const TIME = 3600000;
 const DIFF = 4555;
 
 client.on('message', async (message) => {
@@ -57,12 +57,12 @@ client.on('message', async (message) => {
                 console.log('Removed from map.')
             }, TIME);
             usersMap.set(message.author.id, userData)
-        } 
+        }
         else {
             ++msgCount;
             if (parseInt(msgCount) === WARN) {
                 message.delete();
-                message.reply('<a:animebonk:833775373908443206> السبام ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({timeout: 4000}))
+                message.reply('<a:animebonk:833775373908443206> السبام ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 4000 }))
             }
             if (parseInt(msgCount) === LIMIT) {
                 let muterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
@@ -83,16 +83,16 @@ client.on('message', async (message) => {
                 }
                 message.delete();
                 message.member.roles.add(muterole);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``) .setColor('#E3A781'));
-                message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h mute') .addField('**reason**', 'Spamming') .setColor('RANDOM'));
+                message.channel.send(new Discord.MessageEmbed().setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``).setColor('#E3A781'));
+                message.author.send(new Discord.MessageEmbed().setTitle('**moderation mail**').setDescription('you have been muted so you can not send messages in the server').addField('**action**', '<a:animebonk:833775373908443206> 1h mute').addField('**reason**', 'Spamming').setColor('RANDOM'));
                 setTimeout(() => {
                     message.member.roles.remove(muterole);
-                  
+
                 }, TIME);
             } else {
                 userData.msgCount = msgCount;
                 usersMap.set(message.author.id, userData);
-            } 
+            }
         }
     }
     else {
@@ -105,117 +105,117 @@ client.on('message', async (message) => {
             lastMessage: message,
             timer: fn
         });
-    } 
+    }
 })
 
-       const usersinviteMap = new Map();
+const usersinviteMap = new Map();
 
-       client.on('message', async (message) =>{
-        if (message.author.bot) return;
-        if (message.channel.type === 'dm') return;
-        const isInvite = (guild, code) => new Promise((resolve) =>{
-            guild.fetchInvites().then((invites) => {
-                resolve(invites.some((value) => value[0] === code))
-            })
-        }); 
- 
-        const code = message.content.split('discord.gg/')[1];
-        if (message.content.includes('discord.gg/')) {
-            if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
-            const isOurInvite = await isInvite(message.guild, code);
-            if(!isOurInvite) {
-                message.delete().catch(error => {
-                    if (error.code !== 10008) {
-                        console.error('failed to delete the message', error);
-                    }
-                });
-                const MTIME = 3600000; 
-            let Tmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
-            message.member.roles.add(Tmuterole);
-               message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``) .setColor('#E3A781'));
-               message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 1h Mute') .addField('**reason**', 'invite link') .setColor('RANDOM')).catch(()=> {return});
-               setTimeout(() => {
-                   message.member.roles.remove(Tmuterole);
-               }, MTIME);
-            } 
-        } 
-       })
-
-
-
-    client.on('message', async (message) =>{
-        if (message.author.bot) return;
-        if (message.channel.type === 'dm') return;
-        if (message.content.startsWith('السلام عليكم')) {
-            message.channel.send(`**و عليكم السلام منور  <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
-         
-        } else if (message.content.startsWith('باك')) {
-            message.channel.send(`**ولكم باك منور  <@${message.author.id}> <a:ENJOY_95:790545328021045268> <a:ENJOY_95:790545328021045268> **`)
-         
-        } else if (message.content.startsWith('برب')) {
-            message.channel.send(`**بالتوفيق يا بعد راسي <@${message.author.id}> عاد لا تطول**<a:ENJOY_183:805837612988104704>`)
-         
-        } else if (message.content.startsWith('**برب**')) {
-            message.channel.send(`**بالتوفيق يا بعد راسي <@${message.author.id}> عاد لا تطول**<a:ENJOY_183:805837612988104704>`)
-         
-        } else if (message.content.startsWith('**السلام عليكم**')) {
-            message.channel.send(`**و عليكم السلام منور  <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
-        
-        } else if (message.content.startsWith('**باك**')) {
-            message.channel.send(`**ولكم باك منور  <@${message.author.id}> <a:ENJOY_95:790545328021045268>**`)
-         
-        } else if (message.content.startsWith('زق')) {
-            if (message.author.bot) return;
-            if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
-            message.delete();
-            message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({timeout: 3000}))
-         
-        } else if (message.content.startsWith('سلام عليكم')) {
-            message.channel.send(`**و عليكم السلام منور  <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
-        
-        } 
-    })
-
-    client.on('message', async (message) =>{
-        if (message.channel.type === 'dm') return;
-        if (message.channel.id == '796211852920487987') return;
-        if (message.channel.id == '811248797669392385') return;
-        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
-        if (message.author.bot) return;
-        const amount = 4;
-        let filter = msg => {
-            return msg.content.toLowerCase() == message.content.toLowerCase() &&
-            msg.author.id == message.author.id;
-        }
-
-        message.channel.awaitMessages(filter, { max: 2, time: 15000, errors: ["time"]}).then(collected => {
-            if (message.content.toLowerCase() == message.content.toLowerCase()){
-            message.reply('<a:animebonk:833775373908443206> تكرار الرسايل ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({timeout: 3500}))
-            }
-        }).catch(collected => { console.log('time up')});
-
-    
-// 180000
-        message.channel.awaitMessages(filter, { max: 3, time: 15000, errors: ["time"]}).then(collected => {
-            if (message.content.toLowerCase() == message.content.toLowerCase()){
-                message.delete().catch(error => {
-                    if (error.code !== 10008) {
-                        console.error('failed to delete the message', error);
-                    }
-                });
-                const RTIME = 1800000; 
-                let Rmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
-                message.member.roles.add(Rmuterole);
-                   message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``) .setColor('#E3A781'));
-                   message.author.send(new Discord.MessageEmbed() .setTitle('**moderation mail**') .setDescription('you have been muted for continuous **|** so you can not send messages in the server') .addField('**action**', '<a:animebonk:833775373908443206> 30m Mute') .addField('**reason**', 'spam') .setColor('RANDOM')).catch(()=> {return});
-                   setTimeout(() => {
-                       message.member.roles.remove(Rmuterole);
-                   }, RTIME);
-            }
-        }).catch(collected => { console.log('time up')});
+client.on('message', async (message) => {
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    const isInvite = (guild, code) => new Promise((resolve) => {
+        guild.fetchInvites().then((invites) => {
+            resolve(invites.some((value) => value[0] === code))
+        })
     });
 
+    const code = message.content.split('discord.gg/')[1];
+    if (message.content.includes('discord.gg/')) {
+        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+        const isOurInvite = await isInvite(message.guild, code);
+        if (!isOurInvite) {
+            message.delete().catch(error => {
+                if (error.code !== 10008) {
+                    console.error('failed to delete the message', error);
+                }
+            });
+            const MTIME = 3600000;
+            let Tmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
+            message.member.roles.add(Tmuterole);
+            message.channel.send(new Discord.MessageEmbed().setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``).setColor('#E3A781'));
+            message.author.send(new Discord.MessageEmbed().setTitle('**moderation mail**').setDescription('you have been muted so you can not send messages in the server').addField('**action**', '<a:animebonk:833775373908443206> 1h Mute').addField('**reason**', 'invite link').setColor('RANDOM')).catch(() => { return });
+            setTimeout(() => {
+                message.member.roles.remove(Tmuterole);
+            }, MTIME);
+        }
+    }
+})
 
-       
+
+
+client.on('message', async (message) => {
+    if (message.author.bot) return;
+    if (message.channel.type === 'dm') return;
+    if (message.content.startsWith('السلام عليكم')) {
+        message.channel.send(`**و عليكم السلام منور  <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
+
+    } else if (message.content.startsWith('باك')) {
+        message.channel.send(`**ولكم باك منور  <@${message.author.id}> <a:ENJOY_95:790545328021045268> <a:ENJOY_95:790545328021045268> **`)
+
+    } else if (message.content.startsWith('برب')) {
+        message.channel.send(`**بالتوفيق يا بعد راسي <@${message.author.id}> عاد لا تطول**<a:ENJOY_183:805837612988104704>`)
+
+    } else if (message.content.startsWith('**برب**')) {
+        message.channel.send(`**بالتوفيق يا بعد راسي <@${message.author.id}> عاد لا تطول**<a:ENJOY_183:805837612988104704>`)
+
+    } else if (message.content.startsWith('**السلام عليكم**')) {
+        message.channel.send(`**و عليكم السلام منور  <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
+
+    } else if (message.content.startsWith('**باك**')) {
+        message.channel.send(`**ولكم باك منور  <@${message.author.id}> <a:ENJOY_95:790545328021045268>**`)
+
+    } else if (message.content.startsWith('زق')) {
+        if (message.author.bot) return;
+        if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+        message.delete();
+        message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر').then(msg => msg.delete({ timeout: 3000 }))
+
+    } else if (message.content.startsWith('سلام عليكم')) {
+        message.channel.send(`**و عليكم السلام منور  <@${message.author.id}> <a:ENJOY_44:786515261012181012>**`)
+
+    }
+})
+
+client.on('message', async (message) => {
+    if (message.channel.type === 'dm') return;
+    if (message.channel.id == '796211852920487987') return;
+    if (message.channel.id == '811248797669392385') return;
+    if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
+    if (message.author.bot) return;
+    const amount = 4;
+    let filter = msg => {
+        return msg.content.toLowerCase() == message.content.toLowerCase() &&
+            msg.author.id == message.author.id;
+    }
+
+    message.channel.awaitMessages(filter, { max: 2, time: 15000, errors: ["time"] }).then(collected => {
+        if (message.content.toLowerCase() == message.content.toLowerCase()) {
+            message.reply('<a:animebonk:833775373908443206> تكرار الرسايل ممنوع في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 3500 }))
+        }
+    }).catch(collected => { console.log('time up') });
+
+
+    // 180000
+    message.channel.awaitMessages(filter, { max: 3, time: 15000, errors: ["time"] }).then(collected => {
+        if (message.content.toLowerCase() == message.content.toLowerCase()) {
+            message.delete().catch(error => {
+                if (error.code !== 10008) {
+                    console.error('failed to delete the message', error);
+                }
+            });
+            const RTIME = 1800000;
+            let Rmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
+            message.member.roles.add(Rmuterole);
+            message.channel.send(new Discord.MessageEmbed().setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``).setColor('#E3A781'));
+            message.author.send(new Discord.MessageEmbed().setTitle('**moderation mail**').setDescription('you have been muted for continuous **|** so you can not send messages in the server').addField('**action**', '<a:animebonk:833775373908443206> 30m Mute').addField('**reason**', 'spam').setColor('RANDOM')).catch(() => { return });
+            setTimeout(() => {
+                message.member.roles.remove(Rmuterole);
+            }, RTIME);
+        }
+    }).catch(collected => { console.log('time up') });
+});
+
+
+
 client.login(process.env.DISCORD_TOKEN);
 
