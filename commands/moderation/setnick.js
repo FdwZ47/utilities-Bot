@@ -14,15 +14,12 @@ module.exports = {
         if(!user) return; // message.channel.send("make sure to mention a user after the command")
 
         let nick = args.slice(1).join(" ") 
-        if(!nick) return message.channel.send("please input a nickname")
+        if(!nick) return; // message.channel.send("please input a nickname")
 
         let member = message.guild.members.cache.get(user.id)
         await member.setNickname(nick).catch(err =>message.channel.send({embed:{color:"RED",description:`error: ${err}`}}));
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`<a:yes_1:823243336664088616> ${user.tag}'s nickname has been changed to ${nick}`)
-        .setColor('#DDFAFF')
 
-        message.channel.send(embed)
+        message.channel.send(`${user.tag}'s nickname has been changed to ${nick}`)
         message.delete().catch(error => {
             if (error.code !== 10008) {
                 console.error('failed to delete the message', error);

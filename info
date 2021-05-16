@@ -6,3 +6,4 @@ token = procces.env.token
     "lang": "js"
     "token": token
 }
+const Discord = require('discord.js');

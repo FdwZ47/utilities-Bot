@@ -205,6 +205,11 @@ module.exports = (client) => {
 
 
             if (Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
+                message.delete().catch(error => {
+                    if (error.code !== 10008) {
+                        console.error('failed to delete the message', error);
+                    }
+                });
                 var mutedEm = new Discord.MessageEmbed()
                     .setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``)
                     .setColor('#E3A781')

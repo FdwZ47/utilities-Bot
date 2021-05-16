@@ -5,6 +5,7 @@ require('dotenv').config();
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 
 const autoMod = require('./auto-mod');
+//const log = require('./log')
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
@@ -26,6 +27,7 @@ for (const folder of commandFolders) {
 })
 
 autoMod(client);
+
 
 
 const usersMap = new Map();

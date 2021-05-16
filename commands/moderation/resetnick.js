@@ -14,11 +14,9 @@ module.exports = {
 
         let member = message.guild.members.cache.get(user.id)
         await member.setNickname(null).catch(err =>message.channel.send({embed:{color:"RED",description:`error: ${err}`}}));
-        let embed = new Discord.MessageEmbed()
-        .setDescription(`nickname has been reset to ${user.tag}`)
-        .setColor('#DDFAFF')
+       
 
-        message.channel.send(embed)
+        message.channel.send(`nickname has been reset to \`${user.tag}\``)
         message.delete().catch(error => {
             if (error.code !== 10008) {
                 console.error('failed to delete the message', error);

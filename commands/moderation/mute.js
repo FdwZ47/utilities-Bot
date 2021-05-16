@@ -21,7 +21,7 @@ module.exports = {
 
             if (!args[1]) {
                 memberTarget.roles.add(muteRole.id);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> <@${memberTarget.user.id}> has been **muted** **|** ${memberTarget.user.id}`) .setColor('#93BFE6'));
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${memberTarget.user.id}> has been **muted** **|** \`${memberTarget.user.id}\``) .setColor('#93BFE6'));
                 message.delete();
                 return
             }
