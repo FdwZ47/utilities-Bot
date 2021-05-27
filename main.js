@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const Fs = require('fs');
 const ms = require('ms');
-const Canvas = require('canvas')
 require('dotenv').config();
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 
