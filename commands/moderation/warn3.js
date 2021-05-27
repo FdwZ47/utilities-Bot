@@ -19,12 +19,12 @@ module.exports = {
 
             if (!args[1]) {
                 memberTarget.roles.add(warnRole.id);
-                message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> Changed roles for <@${memberTarget.user.id}>, +Warning 3`) .setColor('#E30B5C'));
+                message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${memberTarget.id}> has been **warned** **|** \`${memberTarget.id}\``) .setColor('#E3A781'));
                 message.delete();
                 return
             }
             memberTarget.roles.add(warnRole.id);
-            message.channel.send(new Discord.MessageEmbed() .setDescription(`<:pickaxe:821829362227347526> Changed roles for <@${memberTarget.user.id}>, +Warning 3 for **${ms(ms(args[1]))}**`) .setColor('#E30B5C'));
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`<@${memberTarget.id}> has been **warned** **|** \`${memberTarget.id}\` for **${ms(ms(args[1]))}**`) .setColor('#E3A781'));
             message.delete();
             setTimeout(function () {
                 memberTarget.roles.remove(warnRole.id);

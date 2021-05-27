@@ -6,15 +6,29 @@ module.exports = (client) => {
         if (message.author.bot) return;
         if (message.channel.type === 'dm') return;
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
-        if (message.author.bot) return;
+     
 
         //   const array = ["test"];
-        const array = [' زق', 'يالكلب', 'مخنث', 'سفلة', 'ملعون', 'fuke', 'bitch', 'سحاقية', 'يالكلاب', 'كلتبن', 'كل تبن', 'قحبة', 'Fuke', 'ز.ق'];
+        const array = ['زق', 'يالكلب', 'مخنث', 'سفلة', 'ملعون', 'fuck', 'bitch', 'سحاقية', 'يالكلاب', 'قحبة', 'ز.ق', 'خرا', 'خرة', 'خره'];
         // for (var)
+       
         for (var i = 0; i < array.length; i++) {
-            // if(array.some(w => `${message.content.toLowerCase()}`.includes(`${w}`))){
-            if (message.content.toLowerCase().includes(array[i].toLowerCase())) {
+           // if(array.some(w => `${message.content.toLowerCase()}` === (`${w}`))[i]){
+        //    if (message.content.toLowerCase() === array[i]) {
+            const msgs = message.content.split(' ')
 
+            let found = false;
+
+            await Promise.all(
+                msgs.map((content) => {
+                    if(array.includes(content.toLowerCase())) found = true;
+                })
+            )
+
+            
+            if (found) {
+
+               
                 var warnsJSON = JSON.parse(Fs.readFileSync('./warnInfo.json'))
 
 
@@ -39,6 +53,8 @@ module.exports = (client) => {
 
 
                 if (Number.isInteger(warnsJSON[message.author.id].warns / 3)) {
+
+                    
                     message.delete().catch(error => {
                         if (error.code !== 10008) {
                             console.error('failed to delete the message', error);
@@ -55,8 +71,8 @@ module.exports = (client) => {
 
                     var yougotmuted = new Discord.MessageEmbed()
                         .setTitle('moderation mail')
-                        .setDescription('you have been muted for continuous **|** so you cant send messages in the server')
-                        .addField('action', '<a:animebonk:833775373908443206> 30m mute')
+                        .setDescription('you have been muted **|** so you cant send messages in the server')
+                        .addField('action', '30m mute')
                         .addField('reason', 'Bad words')
                         .setColor('RANDOM')
 
@@ -79,12 +95,12 @@ module.exports = (client) => {
                         }
                     });
 
-                    message.reply('<a:animebonk:833775373908443206> السب و الكلمات المسيئة ممنوعة في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
+                    message.reply('السب و الكلمات المسيئة ممنوعة في السيرفر تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
 
                 }
                 return;
             }
-        }
+        } 
 
         const Bademoji = ['💩', '🖕'];
 
@@ -155,7 +171,7 @@ module.exports = (client) => {
                             console.error('failed to delete the message', error);
                         }
                     });
-                    message.reply('<a:animebonk:833775373908443206> هذي الايموجيات ممنوعة في السيرفر, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
+                    message.reply('هذي الايموجيات ممنوعة في السيرفر تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
 
                 }
                 return;
@@ -245,7 +261,7 @@ module.exports = (client) => {
                         console.error('failed to delete the message', error);
                     }
                 });
-                message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل روابط بالشات هذا, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
+                message.reply('مو مسموح لك ترسل روابط بالشات هذا تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
 
             }
             return;
@@ -256,6 +272,9 @@ module.exports = (client) => {
 
 
         if (message.content.length >= 725) {
+           
+            if (message.channel.id == '847419868726820874') return;
+            if (message.member && message.member.hasPermission("MANAGE_MESSAGES")) return;
 
 
             var warnsJSON = JSON.parse(Fs.readFileSync('./warnInfo.json'))
@@ -319,7 +338,7 @@ module.exports = (client) => {
                         console.error('failed to delete the message', error);
                     }
                 });
-                message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل رسايل طويلة و مزعجة في الشات هذا, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
+                message.reply('مو مسموح لك ترسل رسايل طويلة و مزعجة في الشات هذا تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
 
             }
 
@@ -332,6 +351,8 @@ module.exports = (client) => {
 
             var number = linneArray.length
             if (number >= 85) {
+                if (message.channel.id == '847419868726820874') return;
+                if (message.member && message.member.hasPermission("MANAGE_MESSAGES")) return;
 
                 var warnsJSON = JSON.parse(Fs.readFileSync('./warnInfo.json'))
 
@@ -397,7 +418,7 @@ module.exports = (client) => {
                             console.error('failed to delete the message', error);
                         }
                     });
-                    message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل رسايل طويلة و مزعجة في الشات هذا, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
+                    message.reply('مو مسموح لك ترسل رسايل طويلة و مزعجة في الشات هذا تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
 
                 }
                 return;
@@ -410,6 +431,7 @@ module.exports = (client) => {
 
 
         if (message.mentions.users.size >= 13) {
+            if (message.member && message.member.hasPermission("MANAGE_MESSAGES")) return;
 
 
             var warnsJSON = JSON.parse(Fs.readFileSync('./warnInfo.json'))
@@ -476,7 +498,7 @@ module.exports = (client) => {
                         console.error('failed to delete the message', error);
                     }
                 });
-                message.reply('<a:animebonk:833775373908443206> مو مسموح لك تمنشن كثير اشخاص في نفس الرسالة, تكمل تاخذ ميوت')
+                message.reply('مو مسموح لك تمنشن كثير اشخاص في نفس الرسالة تكمل تاخذ ميوت')
 
             }
             return;
@@ -484,32 +506,15 @@ module.exports = (client) => {
 
 
 
-        const not = ['باعوص', '**باعوص**'];
+        
+        const emoji = message.content.match(/<a:.+?:\d+>|<:.+?:\d+>/g)
+    // const emoji = message.content.match(/^(:[^:\s]+:|<:[^:\s]+:[0-9]+>|<a:[^:\s]+:[0-9]+>)/g)
 
-
-        for (var i = 0; i < not.length; i++)
-
-
-
-            if (message.content.includes(not[i])) {
-                message.delete().catch(error => {
-
-
-                    if (error.code !== 10008) {
-                        console.error('failed to delete the message', error);
-                    }
-                });
-                message.reply('<a:animebonk:833775373908443206> الكلمات هذي ممنوعة في السيرفر').then(msg => msg.delete({ timeout: 3500 }))
-
-            }
-
-
-
-        const emoji = message.content.match(/<:.+?:\d+>/g)
-
+        
 
 
         if (emoji !== null && emoji.length >= 5) {
+            if (message.member && message.member.hasPermission("MANAGE_MESSAGES")) return;
 
 
             var warnsJSON = JSON.parse(Fs.readFileSync('./warnInfo.json'))
@@ -583,12 +588,88 @@ module.exports = (client) => {
                 });
 
 
-                message.reply('<a:animebonk:833775373908443206> مو مسموح لك ترسل ايموجيات كثير بنفس الرسالة, تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
+                message.reply('مو مسموح لك ترسل ايموجيات كثير بنفس الرسالة تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 5000 }))
 
             }
             return;
         }
+    
 
 
+        let filter = msg => {
+            return msg.content.toLowerCase() == message.content.toLowerCase() &&
+                msg.author.id == message.author.id;
+        }
+    
+        message.channel.awaitMessages(filter, { max: 2, time: 15000, errors: ["time"] }).then(collected => {
+            if (message.member && message.member.hasPermission("MANAGE_MESSAGES")) return;
+            if (message.channel.id == '796211852920487987') return;
+            if (message.channel.id == '811248797669392385') return;
+            if (message.content.toLowerCase() == message.content.toLowerCase()) {
+
+                
+            var sameJSON = JSON.parse(Fs.readFileSync('./same.json'))
+
+
+            if (!sameJSON[message.author.id]) {
+                sameJSON[message.author.id] = {
+                    warns: 0
+                }
+
+                Fs.writeFileSync('./same.json', JSON.stringify(sameJSON))
+            }
+
+            sameJSON[message.author.id].warns += 1
+            Fs.writeFileSync('./same.json', JSON.stringify(sameJSON))
+
+
+            setTimeout(function () {
+
+                sameJSON[message.author.id].warns = 0
+                Fs.writeFileSync('./same.json', JSON.stringify(sameJSON))
+            }, ms('1m'))
+            
+         
+            if (Number.isInteger(sameJSON[message.author.id].warns / 3)) {
+               
+            let Rmuterole = message.guild.roles.cache.find(role => role.name === 'T!MUTED');
+            message.member.roles.add(Rmuterole);
+            message.channel.send(new Discord.MessageEmbed().setDescription(`<@${message.author.id}> has been **muted** **|** \`${message.author.id}\``).setColor('#E3A781'));
+            message.author.send(new Discord.MessageEmbed().setTitle('**moderation mail**').setDescription('you have been muted for continuous **|** so you can not send messages in the server').addField('**action**', '<a:animebonk:833775373908443206> 30m Mute').addField('**reason**', 'spam').setColor('RANDOM')).catch(() => { return });
+            setTimeout(() => {
+                message.member.roles.remove(Rmuterole);
+            }, ms('30m'));
+            } else {
+                message.reply('تكرار الرسايل ممنوع تكمل تاخذ ميوت').then(msg => msg.delete({ timeout: 3500 }))
+            }
+            return
+            }
+        }).catch(collected => { console.log('time up') });
+
+        
+        const bad = ['كس امك', 'نيك امك', 'نيك اختك', 'كس اختك']
+
+        const msags = message.content.split(' ')
+
+        let textfound = false;
+
+        await Promise.all(
+            msags.map((content) => {
+                if(bad.includes(content.toLowerCase())) textfound = true;
+            })
+        )
+
+        
+        if (textfound){
+
+            message.delete().catch(error => {
+                if (error.code !== 10008) {
+                    console.error('failed to delete the message', error);
+                }
+            });
+
+            message.member.ban();
+            message.channel.send(new Discord.MessageEmbed() .setDescription(`${message.author.username} has been **banned** **|** \`${message.author.id}\``) .setColor('#A37970'))
+        }
     });
 }
