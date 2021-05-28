@@ -14,7 +14,7 @@ module.exports = {
         .setTitle('<:diary:842666745125797909> help')
         .setDescription("enjoy's Utilities current modules")
         .addField('<:info:821779298952151050> General', 'The default commands that display information')
-        .addField('<:woh:840992686939963392> Fun', 'events commands')
+        .addField(':tada: Fun', 'events commands')
         .addField('<a:srry:825769123686252545> Admin', 'current moderation commands')
         .addField('<:gears:819943211530977350> Utility', 'a Utilities commands')
         .setFooter('Use >help actions to see what kind of action-related features you can do')
@@ -60,6 +60,8 @@ module.exports = {
             .addField('>roll', 'roll a random number from **0 - 100**')
             .addField('>logo', 'send a random logo')
             .addField('>كت', '<a:huh:847507152071688192> كت')
+            .addField('>open', 'unlock command')
+            .addField('>close', 'lock command')
 
             message.channel.send(fun)
         } else if (args[0] === 'utility'.toLowerCase()){

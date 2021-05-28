@@ -1,14 +1,16 @@
 const Discord = require('discord.js');
 module.exports = {
-    name: 'lock',
-    aliases: ['قفل'],
-    permissions: ["MANAGE_CHANNELS"],
+    name: 'close',
+    aliases: [],
+    permissions: ["SEND_TTS_MESSAGES"],
     description: "this command locked channels!",
     async execute(client, message, args, Discord) {
 
        // let msg = await message.channel.send("<:gears:819943211530977350> just a second")
 
-       const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.channel
+       if (message.channel.id !== '847829294717993020') return
+
+       const channel = message.channel;
 
         try {
             channel.updateOverwrite(message.guild.roles.cache.find(e => e.name.toLowerCase().trim() == '@everyone'), {
