@@ -1,9 +1,0 @@
-token = procces.env.token
-{
-    "name": "bot"
-    "author": "Tanya"
-    "first 3": "755"
-    "lang": "js"
-    "token": token
-}
-const Discord = require('discord.js');

@@ -1,5 +1,5 @@
 module.exports = (Discord, client) =>{
-    console.log('Tanya is online!');
+    console.log('Demux is online!');
 
     // const arrayOfstatus = [
     //     'server',
