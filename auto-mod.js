@@ -8,8 +8,8 @@ module.exports = (client) => {
         if (message.member && message.member.hasPermission('ADMINISTRATOR')) return;
      
 
-        //   const array = ["test"];
-        const array = ['زق', 'يالكلب', 'مخنث', 'سفلة', 'ملعون', 'fuck', 'bitch', 'سحاقية', 'يالكلاب', 'قحبة', 'ز.ق', 'خرا', 'خرة', 'خره'];
+        //   const array = ["test"]; curse words => ['', ''] <= 
+        const array = [];
         // for (var)
        
         for (var i = 0; i < array.length; i++) {
